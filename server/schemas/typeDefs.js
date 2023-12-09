@@ -15,11 +15,11 @@ const typeDefs = `
     reviews: [Review]
   }
 
-  Type Coupon {
+  type Coupon {
     _id: ID
     name: String
     discount: Float
-    expiration: Date
+    expiration: String
   }
 
   type Review {

@@ -1,4 +1,5 @@
-import { mongoose } from 'mongoose';
+const { mongoose } = require('mongoose');
+const  getExpiration = require('../utils/expiration');
 
 const { Schema } = mongoose;
 
@@ -17,7 +18,7 @@ const couponSchema = new Schema({
     expiration: {
         type: Date,
         default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
+        get: () => getExpiration(),
     }
 });
 
