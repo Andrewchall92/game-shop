@@ -1,5 +1,5 @@
 
-module.exports = (timestamp) => {
+module.exports = function getExpiration() {
 
     let currentDate = new Date()+'';
  
@@ -11,7 +11,7 @@ module.exports = (timestamp) => {
 
     console.log(addSeven)
     // Set the expiration date (in this example, adding 7 days to the current date)
-    let stringDate = new Date(currentDate).toString();
+    let stringDate = new Date(currentDate);
     stringDate.setDate(addSeven);
 
     let expirationDate = stringDate.toString().slice(0, 15).trim();
