@@ -81,7 +81,7 @@ const typeDefs = `
     addReview(productId: ID!, commentText: String!): Product
     removeReview(productId: ID!, reviewId: ID!): Product
     login(email: String!, password: String!): Auth
-    createCoupon(name: String!, discount: Float!, expiration: Date!): Coupon
+    createCoupon(name: String!, discount: Float!, expiration: String!): Coupon
   }
 `;
 
