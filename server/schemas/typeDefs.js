@@ -26,7 +26,7 @@ const typeDefs = `
     _id: ID
     commentText: String
     createdAt: String
-    author: String
+    user: String
   }
 
   type Order {
