@@ -12,6 +12,13 @@ const typeDefs = `
     quantity: Int
     price: Float
     category: Category
+    reviews: [Review]
+  }
+
+  type Review {
+    _id: ID
+    commentText: String
+    createdAt: String
   }
 
   type Order {
@@ -25,6 +32,8 @@ const typeDefs = `
     firstName: String
     lastName: String
     email: String
+    address: String
+    zip: String
     orders: [Order]
   }
 
@@ -60,6 +69,8 @@ const typeDefs = `
     addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
+    addReview(productId: ID!, commentText: String!): Product
+    removeReview(productId: ID!, commentId: ID!): Product
     login(email: String!, password: String!): Auth
   }
 `;
