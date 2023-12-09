@@ -52,7 +52,7 @@ function Contact() {
     };
   
     return (
-      <div id="contactBachground">
+      <div id="contactBg">
         <div className="container text-center">
           <h2>😁Send us a message😁</h2>
           <form className="form" onSubmit={handleFormSubmit}>
@@ -84,7 +84,7 @@ function Contact() {
                 placeholder="Enter a short message here"
               />
             </div>
-            <button type="submit" id="btnResume">
+            <button type="submit" id="btnContact">
               Send Message
             </button>
   

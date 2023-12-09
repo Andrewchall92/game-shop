@@ -1,3 +1,26 @@
+  h1, h2 {
+    color: white;
+    }
+
+  input, textarea, label {
+    color: black;
+    }
+
+  #btnContact {
+    background-color: blue; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+
+  }
+
 .form {
     margin: 20px;
   }
@@ -7,4 +30,16 @@
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
+  }
+
+  #contactBg {
+    background-image: url("../../images/PageBackgrounds/contactBg.jpg");
+    background-size: 100%;
+    width: 100%;
+   min-height: 1010px;
+    /* border-radius: 0%; */
+    /* background-repeat: no-repeat; */
+    background-position:bottom;
+    /* min-height: 600px; */
+    /* padding-bottom: 100px; */
   }
