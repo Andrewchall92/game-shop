@@ -32,7 +32,7 @@ function Contact() {
       e.preventDefault();
 
       // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
-      if (!validateEmail(email) || !userName) {
+      if (!validateEmail(email) || !userName || !message) {
         setErrorMessage("🤔 No Email entered 🤔");
         if (!userName || !message) {
           setErrorMessage("🤔 No username entered 🤔");
@@ -75,7 +75,7 @@ function Contact() {
                 placeholder="Enter your email here"
               />
               Message:
-              <input
+              <input style={{ height: "100px" }}
                 value={message}
                 name="message"
                 onChange={handleInputChange}
