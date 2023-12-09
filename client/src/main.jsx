@@ -11,7 +11,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
-
+import Contact from "./pages/Contact";
+import Review from "./pages/Review";
 
 const router = createBrowserRouter([
   {
