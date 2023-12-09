@@ -12,6 +12,21 @@ const typeDefs = `
     quantity: Int
     price: Float
     category: Category
+    reviews: [Review]
+  }
+
+  Type Coupon {
+    _id: ID
+    name: String
+    discount: Float
+    expiration: Date
+  }
+
+  type Review {
+    _id: ID
+    commentText: String
+    createdAt: String
+    author: String
   }
 
   type Order {
@@ -25,6 +40,8 @@ const typeDefs = `
     firstName: String
     lastName: String
     email: String
+    address: String
+    zip: String
     orders: [Order]
   }
 
@@ -53,14 +70,18 @@ const typeDefs = `
     user: User
     order(_id: ID!): Order
     checkout(products: [ProductInput]): Checkout
+   
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String! address: String!, zip: String!): Auth
     addOrder(products: [ID]!): Order
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    updateUser(firstName: String, lastName: String, email: String, password: String, address: String, zip: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
+    addReview(productId: ID!, commentText: String!): Product
+    removeReview(productId: ID!, reviewId: ID!): Product
     login(email: String!, password: String!): Auth
+    createCoupon(name: String!, discount: Float!, expiration: Date!): Coupon
   }
 `;
 
