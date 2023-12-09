@@ -1,4 +1,4 @@
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, Review } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -116,18 +116,26 @@ const resolvers = {
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
 
-    addReview: async (parent, { commentText }, context) => {
-        if (context.user) {
-          const review = new Review({ commentText });
-  
-          await User.findByIdAndUpdate(context.user._id, { $push: { reviews: review } });
-  
-          return review;
-        }
-  
-        throw AuthenticationError;
+    addReview: async (parent, { productId, commentText }) => {
+        return Review.findOneAndUpdate(
+          { _id: productId },
+          {
+            $addToSet: { reviews: { commentText } },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
       },
    
+    removeReview: async (parent, { productId, reviewId }) => {
+        return Product.findOneAndUpdate(
+          { _id: productId },
+          { $pull: { reviews: { _id: reviewId } } },
+          { new: true }
+        );
+      },
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

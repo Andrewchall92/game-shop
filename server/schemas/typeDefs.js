@@ -26,6 +26,7 @@ const typeDefs = `
     _id: ID
     commentText: String
     createdAt: String
+    author: String
   }
 
   type Order {
@@ -78,7 +79,7 @@ const typeDefs = `
     updateUser(firstName: String, lastName: String, email: String, password: String, address: String, zip: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     addReview(productId: ID!, commentText: String!): Product
-    removeReview(productId: ID!, commentId: ID!): Product
+    removeReview(productId: ID!, reviewId: ID!): Product
     login(email: String!, password: String!): Auth
     createCoupon(name: String!, discount: Float!, expiration: Date!): Coupon
   }
