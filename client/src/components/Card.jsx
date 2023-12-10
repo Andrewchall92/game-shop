@@ -15,8 +15,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const CardComp = () => {
   return (
-    <Box flex={4} p={2}>
-      <Card>
+   
+      <Card sx={{margin:5}}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: "skyblue" }} aria-label="recipe">
@@ -82,7 +82,7 @@ const CardComp = () => {
           </CardContent>
         </Collapse>
       </Card>
-    </Box>
+    
   );
 };
 

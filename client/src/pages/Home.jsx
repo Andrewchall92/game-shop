@@ -7,7 +7,15 @@ import Cardcomp from '../components/Card'
 const Home = () => {
     
 return (
+
+    <Box flex={4} p={2}>
+       
+
     <Cardcomp />
+    <Cardcomp />
+    <Cardcomp />
+       
+    </Box>
 )
 
 };
