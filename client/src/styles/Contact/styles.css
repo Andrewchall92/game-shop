@@ -19,22 +19,26 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 40px 2px;
     cursor: pointer;
     border-radius: 12px;
-
   }
 
 .form {
     position: relative;
     /* width: 100%; */
-   
     margin: 20px;
     padding-left: 20px;
-    
   }
   
   .form input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  .form textarea {
     display: block;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -46,10 +50,26 @@
     background-image: url("../../images/PageBackgrounds/contactBg.jpg");
     background-size: 100%;
     width: 100%;
-   min-height: 1010px;
+    height: 100%;
+    min-height: 880px;
     /* border-radius: 0%; */
     /* background-repeat: no-repeat; */
-    background-position:bottom;
-    /* min-height: 600px; */
-    /* padding-bottom: 100px; */
+    background-position:auto;
+    padding-bottom: 100px;
   }
+
+  #contactCard {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 80px;
+    justify-content: center;
+    width: 70%;
+    min-height: 300px;
+    position: relative;
+
+  
+    
+  }
+
+

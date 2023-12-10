@@ -32,7 +32,7 @@ function Contact() {
       e.preventDefault();
 
       // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
-      if (!validateEmail(email) || !userName) {
+      if (!validateEmail(email) || !userName || !message) {
         setErrorMessage("🤔 No Email entered 🤔");
         if (!userName || !message) {
           setErrorMessage("🤔 No username entered 🤔");
@@ -54,11 +54,12 @@ function Contact() {
     return (
       <div id="contactBg">
         <div className="container text-center">
-          <h2>😁Send us a message😁</h2>
-          <form className="form" onSubmit={handleFormSubmit}>
+          <h2>😁 Send us a message 😁</h2>
+          <div id="contactCard" >
+          <form className="form" onSubmit={handleFormSubmit} >
             <div className="container text-left">
               Name:
-              <input
+              <input style={{ height: "30px" }}
                 value={userName}
                 name="userName"
                 onChange={handleInputChange}
@@ -66,7 +67,7 @@ function Contact() {
                 placeholder="Enter your name here"
               />
               Email:
-              <input
+              <input style={{ height: "30px" }}
                 value={email}
                 name="email"
                 onChange={handleInputChange}
@@ -75,7 +76,8 @@ function Contact() {
                 placeholder="Enter your email here"
               />
               Message:
-              <input
+              <br></br>
+              <textarea id="w3review" rows="4" 
                 value={message}
                 name="message"
                 onChange={handleInputChange}
@@ -87,6 +89,7 @@ function Contact() {
             <button type="submit" id="btnContact">
               Send Message
             </button>
+            
   
             {errorMessage && (
               <div>
@@ -96,6 +99,8 @@ function Contact() {
           </form>
         </div>
       </div>
+      </div>
+
     );
   }
 
