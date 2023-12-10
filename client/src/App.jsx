@@ -11,15 +11,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Box>
-          <Navbar />
-          <Stack direction="row" spacing={2} justifyContent="space-between">
-            <Sidebar />
-             <Outlet />
-
-            <Rightbar />
-          </Stack>
-        </Box>
+        <Outlet />
 
       </ThemeProvider>
     </>

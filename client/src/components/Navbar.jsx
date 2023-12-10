@@ -14,6 +14,7 @@ import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from "react-router-dom";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -82,7 +83,7 @@ export const Navbar = () => {
           </Menu>
 
           <Menu
-            id="demo-positioned-menu"
+            id="profile-menu"
             aria-labelledby="demo-positioned-button"
             open={open}
             onClose={(e) => setOpen(false)}
@@ -95,9 +96,20 @@ export const Navbar = () => {
               horizontal: "right",
             }}
           >
-            <MenuItem href='/profile'>Profile</MenuItem>
-            <MenuItem>My account</MenuItem>
-            <MenuItem>Logout</MenuItem>
+            <MenuItem>
+            <Link
+            to='./profile'
+            > 
+            My account
+            </Link>
+           </MenuItem>
+            <MenuItem>
+            <Link
+            to="/login"
+            >Sign In
+            </Link> </MenuItem>
+            
+          
           </Menu>
         </Icons>
       </StyledToolbar>
