@@ -1,0 +1,10 @@
+.main-display {
+    display: flex;
+    gap: 20px;
+    background-color: rgb(100, 96, 90);
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    max-width: 30%;
+}

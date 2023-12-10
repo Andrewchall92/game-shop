@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 const CardComp = ({image}) => {
   return (
    
@@ -25,7 +25,7 @@ const CardComp = ({image}) => {
           }
           action={
             <IconButton aria-label="settings">
-              {/* <MoreVertIcon /> */}
+              <MoreVertIcon />
             </IconButton>
           }
           title="Shrimp and Chorizo Paella"
