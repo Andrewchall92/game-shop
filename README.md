@@ -7,33 +7,31 @@
 ## Technology Used:
  * npm - https://www.npmjs.com/
  * JavaScript -  https://developer.mozilla.org/en-US/docs/Web/JavaScript 
- * dotenv - https://www.npmjs.com/package/dotenv
 
  BackEnd Technology:
- * @apollo/server - 
+ * @apollo/server - https://www.apollographql.com/docs/apollo-server/
  * bcrypt - https://www.npmjs.com/package/bcrypt
  * express - https://expressjs.com/
  * graphql - https://graphql.org/
- * jsonwebtoken -
- * mongoose -
- * stripe -
+ * jsonwebtoken - https://www.npmjs.com/package/jsonwebtoken
+ * mongoose - https://www.npmjs.com/package/mongoose
+ * Stripe API - https://stripe.com/docs
 
  FrontEnd Technology:
 
- * @apollo/client -
+ * @apollo/client - https://www.apollographql.com/docs/react/
  * graphql - https://graphql.org/
- * jwt-decode -
- * react -
- * react-dom -
- * react-router-dom -
- * vitest -
- * happy-dom -
+ * jwt-decode - https://www.npmjs.com/package/jwt-decode
+ * react - https://react.dev/
+ * react-dom - https://www.npmjs.com/package/react-dom
+ * react-router-dom - https://www.npmjs.com/package/react-router-dom
+ * vitest - https://vitest.dev/
+ * happy-dom - https://www.npmjs.com/package/happy-dom
  * HTML - https://developer.mozilla.org/en-US/docs/Web/HTML
  * CSS - https://developer.mozilla.org/en-US/docs/Web/CSS
  * BootStrap - https://getbootstrap.com
- * MUI -
- * TailWind -
-
+ * MUI - https://mui.com/
+ * TailWind - https://tailwindcss.com/
  * Unsplash API - https://unsplash.com/developers
 
  ## Description:
