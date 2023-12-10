@@ -33,20 +33,43 @@ export const ADD_USER = gql`
   mutation addUser(
     $firstName: String!
     $lastName: String!
-    $email: String!
-    $password: String!
-    $street: String!
+    $address: String!
     $city: String!
     $state: String!
     $zip: String!
+    $email: String!
+    $password: String!
   ) {
     addUser(
       firstName: $firstName
       lastName: $lastName
+      address: $address
+      city: $city
+      state: $state
+      zip: $zip
       email: $email
       password: $password
     ) {
       token
+      user {
+        _id
+      }
+    }
+  }
+`;
+
+export const ADD_REVIEW = gql`
+  mutation addReview(
+    $productId: ID!
+    $commentText: String!
+  ) {
+    addReview(
+      productId: $productId
+      commentText: $commentText
+    ) {
+      _id
+      commentText
+      createdAt
       user {
         _id
       }

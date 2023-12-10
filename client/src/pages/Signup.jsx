@@ -38,6 +38,8 @@ function Signup() {
           firstName: data.get('firstName'),
           lastName: data.get('lastName'),
           address: data.get('address'),
+          city: data.get('city'),
+          state: data.get('state'),
           zip: data.get('zip'),
           email: data.get('email'),
           password: data.get('password'),
