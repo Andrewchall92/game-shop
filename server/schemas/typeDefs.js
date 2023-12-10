@@ -41,6 +41,8 @@ const typeDefs = `
     lastName: String
     email: String
     address: String
+    city: String
+    state: String
     zip: String
     orders: [Order]
   }
@@ -74,9 +76,9 @@ const typeDefs = `
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String! address: String!, zip: String!): Auth
+    addUser(firstName: String!, lastName: String!, address: String!, city: String!, state: String!, zip: String!, email: String!, password: String! ): Auth
     addOrder(products: [ID]!): Order
-    updateUser(firstName: String, lastName: String, email: String, password: String, address: String, zip: String): User
+    updateUser(firstName: String, lastName: String, email: String, password: String, address: String, city: String, state: String, zip: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     addReview(productId: ID!, commentText: String!): Product
     removeReview(productId: ID!, reviewId: ID!): Product

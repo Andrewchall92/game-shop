@@ -19,7 +19,7 @@ function Copyright(props) {
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
         <Link color="inherit" href="https://mui.com/">
-          Your Website
+          GameRave Hub
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}
@@ -49,7 +49,7 @@ function Login () {
               sm={4}
               md={7}
               sx={{
-                backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+                backgroundImage: 'url(https://source.unsplash.com/random?videogames)',
                 backgroundRepeat: 'no-repeat',
                 backgroundColor: (t) =>
                   t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -107,13 +107,13 @@ function Login () {
                     Sign In
                   </Button>
                   <Grid container>
-                    <Grid item xs>
+                    {/* <Grid item xs>
                       <Link href="#" variant="body2">
                         Forgot password?
                       </Link>
-                    </Grid>
+                    </Grid> */}
                     <Grid item>
-                      <Link href="#" variant="body2">
+                      <Link href="/signup" variant="body2">
                         {"Don't have an account? Sign Up"}
                       </Link>
                     </Grid>
