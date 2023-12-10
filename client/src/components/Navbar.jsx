@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -33,11 +34,12 @@ const Icons = styled(Box)(({ theme }) => ({
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [openNoti, setOpenNoti] = useState(false);
 
   return (
     <AppBar position="sticky">
       <StyledToolbar>
-        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
+        <Typography variant="h5" id='branding' sx={{ display: { xs: "none", sm: "block" } }}>
           BORING GAME
         </Typography>
         <VideogameAssetIcon sx={{ display: { sm: "none", xs: "block" } }} />
@@ -52,10 +54,33 @@ export const Navbar = () => {
             color="action"
           />
           <Badge badgeContent={4} color="error">
-            <NotificationsIcon color="action" />
+            <NotificationsIcon color="action" onClick={(e) => {
+              setOpenNoti(true)}} />
           </Badge>
 
+          <Badge badgeContent={1} color="error">
+            <ShoppingCartIcon color="action" />
+          </Badge>
           {/* Profile Menu on click */}
+          <Menu
+            id="Noti-Menu"
+            aria-labelledby="demo-positioned-button"
+            open={openNoti}
+            onClose={(e) => setOpenNoti(false)}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <MenuItem href='/profile'>Notification #1</MenuItem>
+            <MenuItem > Notification #2 </MenuItem>
+            <MenuItem > Notification #3 </MenuItem>
+          </Menu>
+
           <Menu
             id="demo-positioned-menu"
             aria-labelledby="demo-positioned-button"
