@@ -13,11 +13,17 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.7.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.20",
     "bcrypt": "^4.0.1",
     "express": "^4.17.2",
     "graphql": "^16.6.0",
+    "install": "^0.13.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^7.0.2",
+    "npm": "^10.2.5",
     "stripe": "^8.67.0"
   },
   "devDependencies": {
