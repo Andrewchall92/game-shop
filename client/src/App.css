@@ -5,11 +5,13 @@
 }
 
 .flex-item {
+    margin-top: 30px;
 
 
 
     border: 2px solid #282424;
     border-radius: 20px;
+    
    
 }
 
@@ -17,4 +19,6 @@
     box-shadow: 0 0 10px #282424;
     transform: scale(1.05);
     transition: all 0.6s ease-in-out;
+    border: 3px solid #167ae5;
+
 }

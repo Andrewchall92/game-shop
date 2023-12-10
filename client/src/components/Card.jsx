@@ -13,8 +13,8 @@ function ProductCard() {
     <Box
       className="flex-item"
       sx={{
-        width: { sm: "100%", md: "30%" },
-        maxWidth: { sm: "100%", md: "30%" },
+        width: { sm: "70%", md: "30%" },
+        maxWidth: { sm: "70%", md: "30%" },
         bgcolor: "background.paper",
       }}
     >

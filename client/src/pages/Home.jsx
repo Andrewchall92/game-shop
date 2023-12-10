@@ -8,12 +8,16 @@ import {
   CardMedia,
   Collapse,
   IconButton,
+  Stack,
   Typography,
 } from "@mui/material";
 import React from "react";
 import Cardcomp from "../components/Carde";
 import ProductCard from "../components/Card";
 import "../App.css";
+import { Navbar } from "../components/Navbar";
+import { Sidebar } from "../components/Sidebar";
+import { Rightbar } from "../components/Rightbar";
 
 const image1 =
   "https://www.tastingtable.com/img/gallery/20-delicious-indian-dishes-you-have-to-try-at-least-once/l-intro-1645057933.jpg";
@@ -24,26 +28,36 @@ const image3 =
 
 const Home = () => {
   return (
-    <Box flex={4} p={2}  className="main-display">
+<Box>
+    
+          <Navbar />
+          <Stack direction="row" spacing={2} justifyContent="space-between">
+            <Sidebar />
+            
+            
+            <Box flex={4} p={2}  className="main-display">
       <ProductCard />
       <ProductCard />
       <ProductCard />
       <ProductCard />
       <ProductCard />
+     
       <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      
-
-
-
 
       {/*     
     <Cardcomp image={image1} />
     <Cardcomp image={image2}/>
     <Cardcomp image={image3}/> */}
     </Box>
+
+            <Rightbar />
+          </Stack>
+        </Box>
+
+      
+
+
+
   );
 };
 
