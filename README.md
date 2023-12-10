@@ -2,13 +2,15 @@
 
 [Link to deployed site](#)
 
-![GameRave Hub](./public/image/Screenshot-GetStarted.png)
+![GameRave Hub](./public/image/#.png)
 
 ## Technology Used:
+
  * npm - https://www.npmjs.com/
  * JavaScript -  https://developer.mozilla.org/en-US/docs/Web/JavaScript 
 
  BackEnd Technology:
+
  * @apollo/server - https://www.apollographql.com/docs/apollo-server/
  * bcrypt - https://www.npmjs.com/package/bcrypt
  * express - https://expressjs.com/
@@ -17,7 +19,7 @@
  * mongoose - https://www.npmjs.com/package/mongoose
  * Stripe API - https://stripe.com/docs
 
- FrontEnd Technology:
+ FrontEnd Technology: 
 
  * @apollo/client - https://www.apollographql.com/docs/react/
  * graphql - https://graphql.org/
@@ -112,10 +114,6 @@ x
  ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
  ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-
- ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-
- ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
 
  ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 

@@ -39,11 +39,11 @@ const typeDefs = `
     _id: ID
     firstName: String
     lastName: String
-    email: String
     address: String
     city: String
     state: String
     zip: String
+    email: String
     orders: [Order]
   }
 
