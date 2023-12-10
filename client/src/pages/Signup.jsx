@@ -47,24 +47,25 @@ function Signup() {
       };
     
       return (
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={defaultTheme} >
           <Container component="main" maxWidth="xs">
-            <CssBaseline />
+            <CssBaseline  />
             <Box
               sx={{
                 marginTop: 8,
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center',
+                alignItems: 'left',
+                
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+              <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} >
                 <LockOutlinedIcon />
               </Avatar>
-              <Typography component="h1" variant="h5">
+              <Typography component="h1" variant="h5" >
                 Sign up
               </Typography>
-              <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+              <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }} width={400} >
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
                     <TextField
@@ -164,7 +165,7 @@ function Signup() {
                 >
                   Sign Up
                 </Button>
-                <Grid container justifyContent="flex-end">
+                <Grid container justifyContent="flex" >
                   <Grid item>
                     <Link href="/login" variant="body2">
                       Already have an account? Sign in
@@ -173,7 +174,7 @@ function Signup() {
                 </Grid>
               </Box>
             </Box>
-            <Copyright sx={{ mt: 5 }} />
+            {/* <Copyright sx={{ mt: 5 }}  marginRight={20}/> */}
           </Container>
         </ThemeProvider>
       );
