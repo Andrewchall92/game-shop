@@ -45,14 +45,22 @@ export const Navbar = () => {
           <InputBase placeholder="search..." />
         </Search>
         <Icons>
+          <AccountBoxIcon
+            onClick={(e) => {
+              setOpen(true);
+            }}
+            color="action"
+          />
           <Badge badgeContent={4} color="error">
             <NotificationsIcon color="action" />
           </Badge>
+
+          {/* Profile Menu on click */}
           <Menu
             id="demo-positioned-menu"
             aria-labelledby="demo-positioned-button"
             open={open}
-            onClose={(e)=>  setOpen(false)}
+            onClose={(e) => setOpen(false)}
             anchorOrigin={{
               vertical: "top",
               horizontal: "right",
@@ -66,7 +74,6 @@ export const Navbar = () => {
             <MenuItem>My account</MenuItem>
             <MenuItem>Logout</MenuItem>
           </Menu>
-          <AccountBoxIcon onClick={(e)=>{setOpen(true)}} color="action" />
         </Icons>
       </StyledToolbar>
     </AppBar>
