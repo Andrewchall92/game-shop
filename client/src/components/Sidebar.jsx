@@ -43,7 +43,7 @@ export const Sidebar = () => {
           </ListItem>
 
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a" href="/setting">
               <ListItemIcon>
                 <SettingsIcon/>
               </ListItemIcon>
@@ -52,7 +52,7 @@ export const Sidebar = () => {
           </ListItem>
 
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a" href="#simple-list">
               <ListItemIcon>
                 <Brightness2Icon/>
               </ListItemIcon>

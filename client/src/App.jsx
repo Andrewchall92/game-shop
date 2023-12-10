@@ -14,12 +14,13 @@ function App() {
           <Navbar />
           <Stack direction="row" spacing={2} justifyContent="space-between">
             <Sidebar />
-            <Feed />
+            {/* <Feed />        */}
+             <Outlet />
+
             <Rightbar />
           </Stack>
         </Box>
 
-        {/* <Outlet /> */}
       </ThemeProvider>
     </>
   );

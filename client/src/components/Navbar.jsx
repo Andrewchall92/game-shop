@@ -70,7 +70,7 @@ export const Navbar = () => {
               horizontal: "right",
             }}
           >
-            <MenuItem>Profile</MenuItem>
+            <MenuItem href='/profile'>Profile</MenuItem>
             <MenuItem>My account</MenuItem>
             <MenuItem>Logout</MenuItem>
           </Menu>
