@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/Home.jsx'
 import Detail from './pages/Detail';
-import NoMatch from './pages/NoMatch';
+import NoMatch from './pages/NoMatch.jsx';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Success from './pages/Success';

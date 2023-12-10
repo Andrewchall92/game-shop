@@ -18,7 +18,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        GameRave Hub
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -100,6 +100,26 @@ function Signup() {
                     <TextField
                       required
                       fullWidth
+                      name="city"
+                      label="City"
+                      id="city"
+                      autoComplete="new-city"
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      required
+                      fullWidth
+                      name="state"
+                      label="State"
+                      id="state"
+                      autoComplete="new-state"
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      required
+                      fullWidth
                       name="zip"
                       label="Zipcode"
                       id="zip"
@@ -144,7 +164,7 @@ function Signup() {
                 </Button>
                 <Grid container justifyContent="flex-end">
                   <Grid item>
-                    <Link href="#" variant="body2">
+                    <Link href="/login" variant="body2">
                       Already have an account? Sign in
                     </Link>
                   </Grid>
