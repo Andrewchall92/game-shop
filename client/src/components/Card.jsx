@@ -13,7 +13,7 @@ import {
 import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const CardComp = () => {
+const CardComp = ({image}) => {
   return (
    
       <Card sx={{margin:5}}>
@@ -34,7 +34,7 @@ const CardComp = () => {
         <CardMedia
           component="img"
           height="194"
-          src="https://www.tastingtable.com/img/gallery/20-delicious-indian-dishes-you-have-to-try-at-least-once/l-intro-1645057933.jpg"
+          src={image}
           alt="Paella dish"
         />
         <CardContent>
