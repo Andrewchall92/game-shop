@@ -68,3 +68,17 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_ALL_REVIEWS = gql`
+  {
+    reviews {
+      _id
+      commentText
+      createdAt
+      user {
+        firstName
+        lastName
+      }
+    }
+  }
+`;
