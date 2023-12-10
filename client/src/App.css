@@ -1,10 +1,20 @@
 .main-display {
     display: flex;
     gap: 20px;
-    background-color: rgb(100, 96, 90);
     flex-wrap: wrap;
 }
 
 .flex-item {
-    max-width: 30%;
+
+
+
+    border: 2px solid #282424;
+    border-radius: 20px;
+   
+}
+
+.flex-item:hover {
+    box-shadow: 0 0 10px #282424;
+    transform: scale(1.05);
+    transition: all 0.6s ease-in-out;
 }

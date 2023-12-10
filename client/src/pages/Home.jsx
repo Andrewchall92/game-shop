@@ -11,8 +11,8 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import Cardcomp from "../components/Card";
-import MiddleDividers from "../components/Cardsm";
+import Cardcomp from "../components/Carde";
+import ProductCard from "../components/Card";
 import "../App.css";
 
 const image1 =
@@ -25,15 +25,15 @@ const image3 =
 const Home = () => {
   return (
     <Box flex={4} p={2}  className="main-display">
-      <MiddleDividers />
-      <MiddleDividers />
-      <MiddleDividers />
-      <MiddleDividers />
-      <MiddleDividers />
-      <MiddleDividers />
-      <MiddleDividers />
-      <MiddleDividers />
-      <MiddleDividers />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
       
 
 
