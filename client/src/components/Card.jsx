@@ -1,16 +1,16 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Chip from "@mui/material/Chip";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import { CardMedia } from "@mui/material";
+import { CardMedia, Checkbox } from "@mui/material";
+import { FavoriteBorder, Favorite } from '@mui/icons-material';
 
-function ProductCard() {
+export function ProductCard({ name, price, description, image, category }) {
   return (
     <Box
+      key={name}
       className="flex-item"
       sx={{
         width: { sm: "70%", md: "30%" },
@@ -19,30 +19,29 @@ function ProductCard() {
       }}
     >
       <Box sx={{ my: 3, mx: 2 }}>
-         <CardMedia
-            width="100%"
-              component="img"
-
-              image="https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?cs=srgb&dl=pexels-svetozar-milashevich-1490908.jpg&fm=jpg"
-              alt="Paella dish"
-            />
+        <CardMedia
+          width="100%"
+          component="img"
+          image={image}
+          alt="Paella dish"
+        />
         <Grid container alignItems="center">
           <Grid item xs={12}>
             <Typography gutterBottom variant="h5" component="div">
-              Toothbrush               
+              {name}
             </Typography>
-           
           </Grid>
           <Grid item={12}>
             <Typography gutterBottom variant="h5" component="div">
-              $4.50
+              {price}
             </Typography>
           </Grid>
         </Grid>
         <Typography color="text.secondary" variant="body2">
-          Pinstriped cornflower blue cotton blouse takes you on a walk to the
-          park or just down the hall.
+          {description}
+          {category}
         </Typography>
+        <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
       </Box>
       <Divider variant="middle" />
       <Box sx={{ m: 2 }}></Box>
@@ -52,5 +51,3 @@ function ProductCard() {
     </Box>
   );
 };
-
-export default ProductCard;
