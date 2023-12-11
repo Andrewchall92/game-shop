@@ -55,7 +55,7 @@ function Signup() {
                 marginTop: 8,
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'left',
+                alignItems: 'center'
                 
               }}
             >
