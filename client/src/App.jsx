@@ -6,9 +6,11 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
+
   createHttpLink,
 } from "@apollo/client";
 import "./index.css";
+
 
 const client = new ApolloClient({
   link: "/graphql",
@@ -18,11 +20,13 @@ const client = new ApolloClient({
 function App() {
   return (
     <>
+
       <ApolloProvider client={client}>
           <ThemeProvider theme={theme}>
             <Outlet />
           </ThemeProvider>
       </ApolloProvider>
+
     </>
   );
 }

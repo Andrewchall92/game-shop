@@ -25,18 +25,26 @@ export const QUERY_CHECKOUT = gql`
 `;
 
 export const QUERY_ALL_PRODUCTS = gql`
-  {
-    products {
-      _id
+{
+  products {
+    name
+    _id
+    category {
       name
-      description
-      price
-      quantity
-      category {
-        name
-      }
+    }
+    likes
+    description
+    price
+    image
+    quantity
+    reviews {
+      user
+      commentText
+      createdAt
     }
   }
+}
+
 `;
 
 export const QUERY_CATEGORIES = gql`
