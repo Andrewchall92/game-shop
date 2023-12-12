@@ -100,7 +100,7 @@
     {
         "name": "RoboCop: Rogue City",
         "description": "RoboCop: Rogue City is an upcoming first-person shooter video game developed by Teyon and published by Nacon. It is based on the RoboCop franchise, and is set to be released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S in 2023.",
-        "image": "",
+        "image": "https://en.wikipedia.org/wiki/RoboCop:_Rogue_City#/media/File:RoboCop_Rogue_City_cover_art.jpg",
         "price": 59.99,
         "category": "categories[1]._id"
     },
@@ -142,14 +142,14 @@
     {
         "name": "Hogwarts Legacy",
         "description": "Hogwarts Legacy is an upcoming action role-playing video game set in the late 1800s in the Wizarding World being developed by Avalanche Software and published by Warner Bros. Interactive Entertainment under its Portkey Games label. The game will be released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S in 2022.",
-        "image": "https://upload.wikimedia.org/wikipedia/en/0/0c/Frostpunk_cover_art.jpg",
+        "image": "https://en.wikipedia.org/wiki/Hogwarts_Legacy#/media/File:Hogwarts-Legacy-cover.jpg",
         "price": 59.99,
         "category": "categories[7]._id"
     },
     {
         "name": "Flight Simulator",
         "description": "Microsoft Flight Simulator is a series of amateur flight simulator programs for Microsoft Windows operating systems, and earlier for MS-DOS and Classic Mac OS. It is one of the longest-running, best-known, and most comprehensive home flight simulator programs on the market. It was an early product in the Microsoft application portfolio and differed significantly from Microsoft's other software, which was largely business-oriented. At 25 years it is the longest-running software product line for Microsoft, predating Windows by three years. Microsoft Flight Simulator may be the longest-running PC game series of all time.",
-        "image": "https://upload.wikimedia.org/wikipedia/en/0/0c/Frostpunk_cover_art.jpg",
+        "image": "https://en.wikipedia.org/wiki/Microsoft_Flight_Simulator_%282020_video_game%29#/media/File:Microsoft_Flight_Simulator_2020_cover_art.png",
         "price": 59.99,
         "category": "categories[8]._id"
     },
