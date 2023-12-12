@@ -16,7 +16,7 @@ const itemData = {
 
 export const Rightbar = () => {
   return (
-    <Box flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box flex={2} p={2} sx={{ display: { sm: "none", md: "block" } }}>
       <Box position="fixed">
         <Typography variant="h6">Shop ours Deals</Typography>
         <ImageList sx={{ width: 370, height: 450 }} cols={3} rowHeight={160}>

@@ -7,19 +7,19 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 
-export const Sidebar = () => {
+export const Sidebar = ({currentPage, handlePageChange}) => {
   return (
     <Box
       
       flex={1}
       p={2}
-      sx={{ display: { xs: "none", sm: "block" } }}
+      sx={{ display: { sm: "none", md: "block" } }}
     >
         <Box position="fixed">
 
      <List>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a" onClick={ ()=> handlePageChange('Home')}>
               <ListItemIcon>
                 <HomeIcon/>
               </ListItemIcon>
@@ -28,7 +28,7 @@ export const Sidebar = () => {
           </ListItem>
           <ListItem disablePadding>
 
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a"onClick={ ()=> handlePageChange('Favorite')}>
               <ListItemIcon>
                 <StarRateIcon/>
               </ListItemIcon>
@@ -37,7 +37,7 @@ export const Sidebar = () => {
           </ListItem>
           <ListItem disablePadding>
 
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a" onClick={ ()=> handlePageChange('Coupons')}>
               <ListItemIcon>
                 <LocalOfferIcon/>
               </ListItemIcon>

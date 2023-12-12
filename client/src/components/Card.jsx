@@ -37,12 +37,13 @@ export function ProductCard({ name, price, description, image, category }) {
             </Typography>
           </Grid>
         </Grid>
-        <Typography color="text.secondary" variant="body2">
+        <Typography color="text.secondary" variant="body2" sx={{display:{sm:"none", lg:"block"}}}>
           {description}
-          {category}
+        
         </Typography>
-        <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+        
       </Box>
+      <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
       <Divider variant="middle" />
       <Box sx={{ m: 2 }}></Box>
       <Box sx={{ mt: 3, ml: 1, mb: 1 }}>
