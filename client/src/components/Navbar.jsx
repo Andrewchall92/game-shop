@@ -40,7 +40,9 @@ export const Navbar = () => {
   return (
     <AppBar position="sticky">
       <StyledToolbar>
-        <Typography variant="h5" id='branding' sx={{ display: { xs: "none", sm: "block" } }}>
+        <Typography variant="h5" style={{
+        fontFamily: 'Staatliches', 
+        fontWeight: 'bold'}} id='branding' sx={{ display: { xs: "none", sm: "block" } }}>
           BORING GAME
         </Typography>
         <VideogameAssetIcon sx={{ display: { sm: "none", xs: "block" } }} />
