@@ -35,7 +35,7 @@ const Icons = styled(Box)(({ theme }) => ({
   gap: "20px",
 }));
 
-export const Navbar = () => {
+export const Navbar = ({ toggleCart }) => {
   const [open, setOpenAccount] = useState(false);
   const [openNoti, setOpenNoti] = useState(false);
 
@@ -64,7 +64,7 @@ export const Navbar = () => {
           </Badge>
 
           <Badge badgeContent={1} color="error">
-            <ShoppingCartIcon color="action" />
+            <ShoppingCartIcon color="action" onClick={toggleCart} />
           </Badge>
           {/* Profile Menu on click */}
           <Menu
