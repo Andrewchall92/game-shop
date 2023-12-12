@@ -7,7 +7,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 
-export const Sidebar = () => {
+export const Sidebar = ({currentPage, handlePageChange}) => {
   return (
     <Box
       
@@ -19,7 +19,7 @@ export const Sidebar = () => {
 
      <List>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a" onClick={ ()=> handlePageChange('Home')}>
               <ListItemIcon>
                 <HomeIcon/>
               </ListItemIcon>
@@ -28,7 +28,7 @@ export const Sidebar = () => {
           </ListItem>
           <ListItem disablePadding>
 
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a"onClick={ ()=> handlePageChange('Favorite')}>
               <ListItemIcon>
                 <StarRateIcon/>
               </ListItemIcon>
@@ -37,7 +37,7 @@ export const Sidebar = () => {
           </ListItem>
           <ListItem disablePadding>
 
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a" onClick={ ()=> handlePageChange('Coupons')}>
               <ListItemIcon>
                 <LocalOfferIcon/>
               </ListItemIcon>

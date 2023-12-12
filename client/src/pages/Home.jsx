@@ -5,7 +5,7 @@ import { Navbar } from "../components/Navbar";
 import { Rightbar } from "../components/Rightbar";
 import { Sidebar } from "../components/Sidebar";
 import { Box, Stack } from "@mui/material";
-import HomeContent from "../components/HomeContent";
+import HomeContent from "../components/Feeds";
 
 
 
