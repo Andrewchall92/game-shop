@@ -51,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: '/products/:id',
         element: <Detail />
+      },
+      {
+        path: '*',
+        element: <NoMatch />
       }
     ]
 
