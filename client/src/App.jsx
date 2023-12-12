@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { theme } from "./assets/theme";
 import { ThemeProvider } from "@mui/material";
+import { StoreProvider } from "./utils/GlobalState";
+import { setContext } from '@apollo/client/link/context';
 
 import {
   ApolloClient,
@@ -10,9 +12,22 @@ import {
 } from '@apollo/client';
 import './index.css'
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
 const client = new ApolloClient({
-  link:  '/graphql',
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -20,10 +35,11 @@ function App() {
   return (
     <>
     <ApolloProvider client={client}>
-
+      <StoreProvider>
       <ThemeProvider theme={theme}>
         <Outlet />
       </ThemeProvider>
+      </StoreProvider>
 
     </ApolloProvider>
     </>

@@ -31,7 +31,7 @@ export function ProductCard({ name, price, description, image, category }) {
               {name}
             </Typography>
           </Grid>
-          <Grid item={12}>
+          <Grid item xs={12}>
             <Typography gutterBottom variant="h5" component="div">
               {price}
             </Typography>

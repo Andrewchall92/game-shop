@@ -15,6 +15,8 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
+import { TOGGLE_CART } from "../utils/actions";
+
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
