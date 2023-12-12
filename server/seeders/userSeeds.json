@@ -7,7 +7,8 @@
     "address": "123 Main",
     "city": "Anytown",
     "state": "CA",
-    "zip": "12345"
+    "zip": "12345",
+    "isAdmin": true
   },
   {
     "firstName": "Dennis",
