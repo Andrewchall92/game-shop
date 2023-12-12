@@ -20,9 +20,9 @@ function Copyright(props) {
         {'Copyright © '}
         <Link color="inherit" href="https://mui.com/">
           GameRave Hub
-        </Link>{' '}
+        </Link>
         {new Date().getFullYear()}
-        {'.'}
+      
       </Typography>
     );
   }
