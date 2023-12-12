@@ -55,7 +55,7 @@ function Signup() {
                 marginTop: 8,
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'left',
+                alignItems: 'center'
                 
               }}
             >
@@ -162,6 +162,11 @@ function Signup() {
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
+                  onClick = {(e) => {
+                    e.preventDefault();
+                    window.location.href='/';
+                  }}
+              
                 >
                   Sign Up
                 </Button>

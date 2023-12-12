@@ -1,0 +1,33 @@
+[
+  {
+    "firstName": "Brian",
+    "lastName": "Kernighan",
+    "email": "bkernighan@techfriends.dev",
+    "password": "password01",
+    "address": "123 Main",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "12345",
+    "isAdmin": true
+  },
+  {
+    "firstName": "Dennis",
+    "lastName": "Ritchie",
+    "email": "dennis@gmail.com",
+    "password": "password02",
+    "address": "123 Main",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "12345"
+  },
+  {
+    "firstName": "Ken",
+    "lastName": "Thompson",
+    "email": "kthompson@gmail.com",
+    "password": "password03",
+    "address": "123 Main",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "12345"
+  }
+]

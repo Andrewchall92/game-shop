@@ -8,7 +8,11 @@ import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
   CLEAR_CART,
-  TOGGLE_CART
+  TOGGLE_CART,
+  ADD_REVIEW,
+  UPDATE_REVIEWS,
+  REMOVE_REVIEW
+  
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -78,7 +82,37 @@ export const reducer = (state, action) => {
       return {
         ...state,
         currentCategory: action.currentCategory
-      }
+      };
+
+    case ADD_REVIEW:
+      return {
+        ...state,
+        reviews: [...action.reviews],
+      };
+
+    case UPDATE_REVIEWS:
+      return {
+        ...state,
+        reviews: [...action.reviews],
+      };
+
+    case REMOVE_REVIEW:
+      let newStateReview = state.reviews.filter(review => {
+        return review._id !== action._id;
+      });
+
+      return {
+        ...state,
+        reviews: newStateReview
+      };
+
+
+
+
+
+
+
+
 
     default:
       return state;

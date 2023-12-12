@@ -13,6 +13,7 @@ const typeDefs = `
     price: Float
     category: Category
     reviews: [Review]
+    likes: Int
   }
 
   type Coupon {
@@ -72,7 +73,7 @@ const typeDefs = `
     user: User
     order(_id: ID!): Order
     checkout(products: [ProductInput]): Checkout
-   
+    getAllLikes: [Product]
   }
 
   type Mutation {
@@ -84,6 +85,8 @@ const typeDefs = `
     removeReview(productId: ID!, reviewId: ID!): Product
     login(email: String!, password: String!): Auth
     createCoupon(name: String!, discount: Float!, expiration: String!): Coupon
+    addLike(_id: ID!): Product
+    removeLike(_id: ID!): Product
   }
 `;
 

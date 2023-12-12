@@ -76,3 +76,30 @@ export const ADD_REVIEW = gql`
     }
   }
 `;
+
+export const ADD_PRODUCT = gql`
+  mutation addProduct(
+    $name: String!
+    $description: String!
+    $price: Float!
+    $quantity: Int!
+    $category: ID!
+  ) {
+    addProduct(
+      name: $name
+      description: $description
+      price: $price
+      quantity: $quantity
+      category: $category
+    ) {
+      _id
+      name
+      description
+      price
+      quantity
+      category {
+        name
+      }
+    }
+  }
+`;
