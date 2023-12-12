@@ -1,0 +1,48 @@
+[
+    {
+        "name": "The Witcher 3",
+        "description": "The Witcher 3: Wild Hunt is a 2015 action role-playing game developed and published by Polish developer CD Projekt Red and is based on The Witcher series of fantasy novels by Andrzej Sapkowski. It is the sequel to the 2011 game The Witcher 2: Assassins of Kings and the third main installment in the The Witcher video game series, played in an open world with a third-person perspective.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "Fallout 4",
+        "description": "Fallout 4 is a post-apocalyptic action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks. It is the fifth major installment in the Fallout series and was released worldwide on November 10, 2015, for Microsoft Windows, PlayStation 4 and Xbox One.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/3/3c/Fallout_4_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "The Elder Scrolls IV: Oblivion",
+        "description": "The Elder Scrolls IV: Oblivion is an open world action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks and the Take-Two Interactive division 2K Games. It is the fourth installment in The Elder Scrolls action fantasy series, following The Elder Scrolls III: Morrowind and preceding The Elder Scrolls V: Skyrim. The game was released for Microsoft Windows and Xbox 360 in March 2006, and on PlayStation 3 in March 2007, with a mobile version of the game released on May 2, 2006. Taking place within the fictional province of Cyrodiil, Oblivion's main story revolves around the player character's efforts to thwart a fanatical cult known as the \"Mythic Dawn\" that plans to open portal gates to a demonic realm known as \"Oblivion\".",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/9d/The_Elder_Scrolls_IV_Oblivion_cover.png",
+        "price": 19.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "The Elder Scrolls Online",
+        "description": "The Elder Scrolls Online is a massively multiplayer online role-playing game (MMORPG) developed by ZeniMax Online Studios and published by Bethesda Softworks. It was released for Microsoft Windows and OS X in April 2014. It is a part of The Elder Scrolls series. The game is set in the continent of Tamriel and features a storyline indirectly connected with the other games in the Elder Scrolls franchise. It had been in development for seven years before its release in 2014. It initially received mixed reviews, but these improved significantly with the re-release and rebranding as The Elder Scrolls Online: Tamriel Unlimited, with critics praising the changes that were made.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/1/1b/The_Elder_Scrolls_Online_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[2]._id"
+    },
+    {
+        "name": "Fornite",
+        "description": "Fortnite is an online video game developed by Epic Games and released in 2017. It is available in three distinct game mode versions that otherwise share the same general gameplay and game engine: Fortnite: Save the World, a cooperative hybrid-tower defense-shooter-survival game for up to four players to fight off zombie-like creatures and defend objects with traps and fortifications they can build; Fortnite Battle Royale, a free-to-play battle royale game where up to 100 players fight to be the last person standing; and Fortnite Creative, where players are given complete freedom to create worlds and battle arenas. The first two game modes were released in 2017 as early access titles and Creative was released on December 6, 2018. Save the World is available only for Windows, macOS, PlayStation 4, and Xbox One, while Battle Royale and Creative released for all those platforms, and also for Nintendo Switch, iOS, and Android devices."
+    },
+    {
+        "name": "Call of Duty: Modern Warfare",
+        "description": "Call of Duty: Modern Warfare is a 2019 first-person shooter video game developed by Infinity Ward and published by Activision. Serving as the sixteenth overall installment in the Call of Duty series, as well as a reboot of the Modern Warfare sub-series, it was released on October 25, 2019, for Microsoft Windows, PlayStation 4, and Xbox One. The game takes place in a realistic and modern setting. The campaign follows a CIA officer and British SAS forces as they team up with rebels from the fictional country of Urzikstan, combating together against Russian forces who have invaded the country. The game's Special Ops mode features cooperative play missions that follow up the campaign's story. The multiplayer mode supports cross-platform multiplayer and cross-platform progression for the first time in the series. It has been re-released on the PlayStation 5 and Xbox Series X/S.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/6/67/Modern_Warfare_2019.jpg",
+        "price": 59.99,
+        "category": "categories[1]._id"
+    },
+    {
+        "name": "Call of Duty: Black Ops Cold War",
+        "description": "Call of Duty: Black Ops Cold War is a 2020 first-person shooter video game developed by Treyarch and Raven Software and published by Activision. It was released worldwide on November 13, 2020, for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X and S. It serves as the sixth installment in the Black Ops series, and the seventeenth installment in the overall Call of Duty series. It is the direct sequel to Call of Duty: Black Ops, the first game in the series to be set during the Cold War, and the fifth to be set overall. A narrative sequel, Call of Duty: Black Ops III, was released in 2015. Black Ops Cold War is set during the early 1980s of the Cold War. Its campaign follows CIA officer Russell Adler as he pursues an alleged Soviet spy, Perseus, whose stated goal is to subvert the United States and tilt the balance of power toward the Soviet Union.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/6/6b/Black_Ops_Cold_War_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[1]._id"
+    }
+]

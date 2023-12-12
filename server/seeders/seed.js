@@ -1,6 +1,7 @@
 const db = require('../config/connection');
 const { User, Product, Category } = require('../models');
 const userSeeds = require('./userSeeds.json');
+const productSeeds = require('./productSeeds.json');
 
 
 const cleanDB = require('./cleanDB');
@@ -33,10 +34,15 @@ db.once('open', async () => {
     { name: 'Other' },
   ]);
 
-  console.log('categories seeded');
-  
+ 
   
   await User.create(userSeeds);
+  await Product.create(productSeeds);
+  await Category.create(categories);
+
+  console.log('users seeded');
+  console.log('categories seeded');
+  console.log('products seeded');
 
   for (let i = 0; i < thoughtSeeds.length; i++) {
     const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
