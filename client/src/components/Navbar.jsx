@@ -34,7 +34,7 @@ const Icons = styled(Box)(({ theme }) => ({
 }));
 
 export const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpenAccount] = useState(false);
   const [openNoti, setOpenNoti] = useState(false);
 
   return (
@@ -52,7 +52,7 @@ export const Navbar = () => {
         <Icons>
           <AccountBoxIcon
             onClick={(e) => {
-              setOpen(true);
+              setOpenAccount(true);
             }}
             color="action"
           />
@@ -88,7 +88,7 @@ export const Navbar = () => {
             id="profile-menu"
             aria-labelledby="demo-positioned-button"
             open={open}
-            onClose={(e) => setOpen(false)}
+            onClose={(e) => setOpenAccount(false)}
             anchorOrigin={{
               vertical: "top",
               horizontal: "right",
