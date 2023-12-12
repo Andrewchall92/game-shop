@@ -11,6 +11,7 @@ const Feeds = () => {
   console.log(products);
   console.log(error);
   return (
+    <>
     <Box flex={4} p={2} className="main-display">
       {products.map((product) => (
         <ProductCard
@@ -24,6 +25,7 @@ const Feeds = () => {
         />
       ))}
     </Box>
+    </>
   );
 };
 

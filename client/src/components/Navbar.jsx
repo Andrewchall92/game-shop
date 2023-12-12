@@ -15,7 +15,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
-import Auth from "../utils/auth.js";
 
 
 const StyledToolbar = styled(Toolbar)({
@@ -62,7 +61,7 @@ function showLogin() {
   }
 }
 
-export const Navbar = () => {
+export const Navbar = ({ toggleCart }) => {
   const [open, setOpenAccount] = useState(false);
   const [openNoti, setOpenNoti] = useState(false);
 
@@ -91,7 +90,7 @@ export const Navbar = () => {
           </Badge>
 
           <Badge badgeContent={1} color="error">
-            <ShoppingCartIcon color="action" z/>
+            <ShoppingCartIcon color="action" onClick={toggleCart} />
           </Badge>
           {/* Profile Menu on click */}
           <Menu

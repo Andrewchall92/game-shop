@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { theme } from "./assets/theme";
 import { ThemeProvider } from "@mui/material";
-import './index.css'
+import { StoreProvider } from "./utils/GlobalState";
+import { setContext } from '@apollo/client/link/context';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,7 +11,6 @@ import {
 
   createHttpLink,
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 
 
 const httpLink = createHttpLink({
@@ -26,7 +27,6 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-
 const client = new ApolloClient({
   link:  authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -35,15 +35,14 @@ const client = new ApolloClient({
 function App() {
   return (
     <>
-
       <ApolloProvider client={client}>
+        <StoreProvider>
           <ThemeProvider theme={theme}>
             <Outlet />
           </ThemeProvider>
+        </StoreProvider>
       </ApolloProvider>
-
     </>
   );
 }
-
 export default App;
