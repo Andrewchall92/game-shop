@@ -34,13 +34,15 @@ const Icons = styled(Box)(({ theme }) => ({
 }));
 
 export const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpenAccount] = useState(false);
   const [openNoti, setOpenNoti] = useState(false);
 
   return (
     <AppBar position="sticky">
       <StyledToolbar>
-        <Typography variant="h5" id='branding' sx={{ display: { xs: "none", sm: "block" } }}>
+        <Typography variant="h5" style={{
+        fontFamily: 'Staatliches', 
+        fontWeight: 'bold'}} id='branding' sx={{ display: { xs: "none", sm: "block" } }}>
           BORING GAME
         </Typography>
         <VideogameAssetIcon sx={{ display: { sm: "none", xs: "block" } }} />
@@ -50,7 +52,7 @@ export const Navbar = () => {
         <Icons>
           <AccountBoxIcon
             onClick={(e) => {
-              setOpen(true);
+              setOpenAccount(true);
             }}
             color="action"
           />
@@ -86,7 +88,7 @@ export const Navbar = () => {
             id="profile-menu"
             aria-labelledby="demo-positioned-button"
             open={open}
-            onClose={(e) => setOpen(false)}
+            onClose={(e) => setOpenAccount(false)}
             anchorOrigin={{
               vertical: "top",
               horizontal: "right",

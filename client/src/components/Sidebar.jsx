@@ -5,20 +5,21 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
-export const Sidebar = () => {
+export const Sidebar = ({currentPage, handlePageChange}) => {
   return (
     <Box
       
       flex={1}
       p={2}
-      sx={{ display: { xs: "none", sm: "block" } }}
+      sx={{ display: { sm: "none", md: "block" } }}
     >
         <Box position="fixed">
 
      <List>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a" onClick={ ()=> handlePageChange('Home')}>
               <ListItemIcon>
                 <HomeIcon/>
               </ListItemIcon>
@@ -27,7 +28,7 @@ export const Sidebar = () => {
           </ListItem>
           <ListItem disablePadding>
 
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a"onClick={ ()=> handlePageChange('Favorite')}>
               <ListItemIcon>
                 <StarRateIcon/>
               </ListItemIcon>
@@ -36,7 +37,7 @@ export const Sidebar = () => {
           </ListItem>
           <ListItem disablePadding>
 
-            <ListItemButton component="a" href="/">
+            <ListItemButton component="a" onClick={ ()=> handlePageChange('Coupons')}>
               <ListItemIcon>
                 <LocalOfferIcon/>
               </ListItemIcon>
@@ -50,6 +51,15 @@ export const Sidebar = () => {
                 <SettingsIcon/>
               </ListItemIcon>
               <ListItemText primary="Setting" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton component="a" href="/contact">
+              <ListItemIcon>
+                <ContactMailIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Contact us" />
             </ListItemButton>
           </ListItem>
 

@@ -19,10 +19,10 @@ function Copyright(props) {
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
         <Link color="inherit" href="https://mui.com/">
-          Boring Game Shop
-        </Link>{' '}
+          Boring Game Shop 
+        </Link>
         {new Date().getFullYear()}
-        {'.'}
+      
       </Typography>
     );
   }
@@ -103,6 +103,10 @@ function Login () {
                     fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
+                    onClick = {(e) => {
+                      e.preventDefault();
+                      window.location.href='/';
+                    }}
                   >
                     Sign In
                   </Button>

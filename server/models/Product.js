@@ -6,6 +6,7 @@ const productSchema = new Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
     trim: true
   },
   description: {
@@ -24,10 +25,22 @@ const productSchema = new Schema({
     min: 0,
     default: 0
   },
-  category: {
+  category:
+  {
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: true
+  }
+  ,
+  likes: {
+    type: Number,
+    default: 0,
+    userId: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ]
   },
   reviews: [
     {
