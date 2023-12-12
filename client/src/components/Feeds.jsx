@@ -14,6 +14,8 @@ const Feeds = () => {
     <Box flex={4} p={2} className="main-display">
       {products.map((product) => (
         <ProductCard
+          key={product._id}
+          id={product._id}
           name={product.name}
           price={product.price}
           description={product.description}
