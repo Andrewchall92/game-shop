@@ -105,15 +105,6 @@ export const reducer = (state, action) => {
         ...state,
         reviews: newStateReview
       };
-
-
-
-
-
-
-
-
-
     default:
       return state;
   }
