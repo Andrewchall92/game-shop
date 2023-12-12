@@ -12,13 +12,19 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import '../styles/SignUp/styles.css';
+import { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
+
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        GameRave Hub
+        Boring Game Shop
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -26,28 +32,41 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
-function Signup() {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          firstName: data.get('firstName'),
-          lastName: data.get('lastName'),
-          address: data.get('address'),
-          city: data.get('city'),
-          state: data.get('state'),
-          zip: data.get('zip'),
-          email: data.get('email'),
-          password: data.get('password'),
-        });
-      };
+function Signup(props) {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        firstName: formState.firstName,
+        lastName: formState.lastName,
+        email: formState.email,
+        password: formState.password,
+        address: formState.address,
+        city: formState.city,
+        state: formState.state,
+        zip: formState.zip,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
     
       return (
-        <ThemeProvider theme={defaultTheme} >
+        
+          <ThemeProvider theme={defaultTheme}>
           <Container component="main" maxWidth="xs">
             <CssBaseline  />
             <Box
@@ -61,11 +80,12 @@ function Signup() {
             >
               <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} >
                 <LockOutlinedIcon />
+        
               </Avatar>
               <Typography component="h1" variant="h5" >
                 Sign up
               </Typography>
-              <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }} width={400} >
+              <Box component="form" noValidate onSubmit={handleFormSubmit} sx={{ mt: 3 }} width={400} >
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
                     <TextField
@@ -76,6 +96,7 @@ function Signup() {
                       id="firstName"
                       label="First Name"
                       autoFocus
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
@@ -86,6 +107,7 @@ function Signup() {
                       label="Last Name"
                       name="lastName"
                       autoComplete="family-name"
+                      onChange={handleChange}
                     />
                   </Grid>
             
@@ -97,6 +119,7 @@ function Signup() {
                       label="Address"
                       id="address"
                       autoComplete="new-address"
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -107,6 +130,7 @@ function Signup() {
                       label="City"
                       id="city"
                       autoComplete="new-city"
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -117,6 +141,7 @@ function Signup() {
                       label="State"
                       id="state"
                       autoComplete="new-state"
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -127,6 +152,7 @@ function Signup() {
                       label="Zipcode"
                       id="zip"
                       autoComplete="new-zip"
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -137,6 +163,7 @@ function Signup() {
                       label="Email Address"
                       name="email"
                       autoComplete="email"
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -148,6 +175,7 @@ function Signup() {
                       type="password"
                       id="password"
                       autoComplete="new-password"
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
