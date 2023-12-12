@@ -10,12 +10,9 @@ import {
 } from '@apollo/client';
 import './index.css'
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link:  '/graphql',
   cache: new InMemoryCache(),
 });
 
