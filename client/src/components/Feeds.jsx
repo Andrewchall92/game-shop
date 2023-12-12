@@ -3,7 +3,7 @@ import {products} from "../utils/products";
 import { Box } from "@mui/material";
 import { ProductCard } from "./Card";
 
-const HomeContent = () => {
+const Feeds = () => {
   return (
     <Box flex={4} p={2} className="main-display">
       {products.map((product) => (
@@ -19,4 +19,4 @@ const HomeContent = () => {
   );
 };
 
-export default HomeContent;
+export default Feeds;

@@ -4,12 +4,12 @@ import { Box } from '@mui/material';
 
 
 
- const Coupons = () => {
+ const Favorite = () => {
     return (
         <Box bgcolor="skyblue" flex={4} p={2}>
-            <p> Coupons Page</p>
+            <p> Favorite Page</p>
         </Box>
     )
 };
 
-export default Coupons;
+export default Favorite;

@@ -5,8 +5,9 @@ import { Navbar } from "../components/Navbar";
 import { Rightbar } from "../components/Rightbar";
 import { Sidebar } from "../components/Sidebar";
 import { Box, Stack } from "@mui/material";
-import HomeContent from "../components/Feeds";
-
+import Feeds from "../components/Feeds";
+import Coupons from "../components/Coupons"; 
+import Favorite from "../components/Favorite";
 
 
 
@@ -19,11 +20,11 @@ const Home = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'Home':
-        return <HomeContent />;
-      // case 'Favorite':
-      //   return <Favorite />;
-      //   case 'Favorite':
-      //   return <Coupon />;
+        return <Feeds />;
+      case 'Favorite':
+        return <Favorite />;
+        case 'Coupons':
+        return <Coupons />;
       // case 'Setting':
       //   return <Setting />;
       // default:
