@@ -103,6 +103,10 @@ function Login () {
                     fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
+                    onClick = {(e) => {
+                      e.preventDefault();
+                      window.location.href='/';
+                    }}
                   >
                     Sign In
                   </Button>
