@@ -1,22 +1,19 @@
 import "../styles/NoMatch/styles.css";
+import errorGif from "../images/404.gif";
 
 function NoMatch() {
   return (
     <div
       style={{
-        height: 560,
-        clear: "both",
-        paddingTop: 120,
-        textAlign: "center",
+        backgroundColor: "lightgray",
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
-      <div id="errorBg">
-        <h1>404 Page Not Found</h1>
-        <h1>
-          <span role="img" aria-label="Face With Rolling Eyes Emoji">
-            🙄
-          </span>
-        </h1>
+      <div>
+        <img className="p-40" src={errorGif} alt="ATAT 404 error gif" />
       </div>
     </div>
   );
