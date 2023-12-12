@@ -15,6 +15,8 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
+import Auth from "../utils/auth.js";
+
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -33,6 +35,33 @@ const Icons = styled(Box)(({ theme }) => ({
   gap: "20px",
 }));
 
+function showLogin() {
+  if (Auth.loggedIn()) {
+    return (
+      <MenuItem>
+      <a href="/" onClick={() => Auth.logout()}>
+        Logout
+      </a> 
+      </MenuItem>
+    )} else {
+      return (
+        <ul className="flex-row">
+          <li className="mx-1">
+            <Link to="/signup">
+              Signup
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/login">
+              Login
+            </Link>
+          </li>
+        </ul>
+    
+      )
+  }
+}
+
 export const Navbar = () => {
   const [open, setOpenAccount] = useState(false);
   const [openNoti, setOpenNoti] = useState(false);
@@ -43,7 +72,7 @@ export const Navbar = () => {
         <Typography variant="h5" style={{
         fontFamily: 'Staatliches', 
         fontWeight: 'bold'}} id='branding' sx={{ display: { xs: "none", sm: "block" } }}>
-          BORING GAME
+          BORING GAME SHOP
         </Typography>
         <VideogameAssetIcon sx={{ display: { sm: "none", xs: "block" } }} />
         <Search>
@@ -62,7 +91,7 @@ export const Navbar = () => {
           </Badge>
 
           <Badge badgeContent={1} color="error">
-            <ShoppingCartIcon color="action" />
+            <ShoppingCartIcon color="action" z/>
           </Badge>
           {/* Profile Menu on click */}
           <Menu
@@ -105,12 +134,9 @@ export const Navbar = () => {
             My account
             </Link>
            </MenuItem>
-            <MenuItem>
-            <Link
-            to="/login"
-            >Sign In
-            </Link> </MenuItem>
-            
+           <MenuItem>
+            {showLogin()}
+            </MenuItem>
           
           </Menu>
         </Icons>
