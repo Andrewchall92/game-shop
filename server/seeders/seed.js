@@ -13,25 +13,15 @@ db.once('open', async () => {
   await cleanDB('User', 'users');
 
   const categories = await Category.insertMany([
-    { name: 'RPG' },
-    { name: 'FPS' },
-    { name: 'MMO' },
-    { name: 'RTS' },
-    { name: 'MOBA' },
-    { name: 'Sports' },
-    { name: 'Racing' },
-    { name: 'Fighting' },
-    { name: 'Survival' },
-    { name: 'Horror' },
-    { name: 'Action' },
-    { name: 'Adventure' },
-    { name: 'Simulation' },
-    { name: 'Strategy' },
-    { name: 'Puzzle' },
-    { name: 'Idle' },
-    { name: 'Platformer' },
-    { name: 'Educational' },
-    { name: 'Other' },
+    { name: 'RPG' }, // 0
+    { name: 'FPS' }, // 1
+    { name: 'MMO' }, // 2
+    { name: 'RTS' }, // 3
+    { name: 'Sports' }, // 4
+    { name: 'Survival' }, // 5
+    { name: 'Action' }, // 6
+    { name: 'Adventure' }, // 7
+    { name: 'Simulation' }, // 8
   ]);
 
  
