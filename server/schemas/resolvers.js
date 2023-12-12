@@ -25,7 +25,7 @@ const resolvers = {
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
     },
-   
+
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -84,7 +84,16 @@ const resolvers = {
 
       return { session: session.id };
     },
+
+    getAllLikes: async (parent, { _id }) => {
+      const product = await Product.findById(_id).populate('likes');
+
+      return product.likes;
+    }
   },
+  
+
+
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -117,25 +126,25 @@ const resolvers = {
     },
 
     addReview: async (parent, { productId, commentText }) => {
-        return Review.findOneAndUpdate(
-          { _id: productId },
-          {
-            $addToSet: { reviews: { commentText } },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      },
-   
+      return Review.findOneAndUpdate(
+        { _id: productId },
+        {
+          $addToSet: { reviews: { commentText } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+
     removeReview: async (parent, { productId, reviewId }) => {
-        return Product.findOneAndUpdate(
-          { _id: productId },
-          { $pull: { reviews: { _id: reviewId } } },
-          { new: true }
-        );
-      },
+      return Product.findOneAndUpdate(
+        { _id: productId },
+        { $pull: { reviews: { _id: reviewId } } },
+        { new: true }
+      );
+    },
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -153,6 +162,32 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    addLike: async (parent, { productId, userId }) => {
+      return Product.findOneAndUpdate(
+        { _id: productId },
+        {
+          $addToSet: { likes: { userId } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+
+    removeLike: async (parent, { productId, userId }) => {
+      return Product.findOneAndUpdate(
+        { _id: productId },
+        {
+          $pull: { likes: { userId } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
     }
   }
 };
