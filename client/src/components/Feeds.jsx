@@ -6,9 +6,10 @@ import { useQuery } from "@apollo/client";
 
 
 const Feeds = () => {
-  const { data } = useQuery(QUERY_ALL_PRODUCTS);
+  const {loading, data , error} = useQuery(QUERY_ALL_PRODUCTS);
   const products = data?.products || [];
-  console.log(data);
+  console.log(products);
+  console.log(error);
   return (
     <Box flex={4} p={2} className="main-display">
       {products.map((product) => (
