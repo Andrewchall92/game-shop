@@ -5,6 +5,7 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 export const Sidebar = () => {
   return (
@@ -50,6 +51,15 @@ export const Sidebar = () => {
                 <SettingsIcon/>
               </ListItemIcon>
               <ListItemText primary="Setting" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton component="a" href="/contact">
+              <ListItemIcon>
+                <ContactMailIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Contact us" />
             </ListItemButton>
           </ListItem>
 
