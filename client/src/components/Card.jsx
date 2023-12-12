@@ -37,7 +37,7 @@ export function ProductCard({ name, price, description, image, category }) {
             </Typography>
           </Grid>
         </Grid>
-        <Typography color="text.secondary" variant="body2">
+        <Typography color="text.secondary" variant="body2" sx={{display:{sm:"none", lg:"block"}}}>
           {description}
         
         </Typography>

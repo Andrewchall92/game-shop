@@ -13,7 +13,7 @@ export const Sidebar = ({currentPage, handlePageChange}) => {
       
       flex={1}
       p={2}
-      sx={{ display: { xs: "none", sm: "block" } }}
+      sx={{ display: { sm: "none", md: "block" } }}
     >
         <Box position="fixed">
 

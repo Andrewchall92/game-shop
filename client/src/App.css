@@ -4,6 +4,14 @@
     flex-wrap: wrap;
 }
 
+.coupon-display {
+
+    gap: 20px;
+
+  
+
+}
+
 .flex-item {
     margin-top: 30px;
 
