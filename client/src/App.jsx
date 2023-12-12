@@ -7,25 +7,22 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import './index.css'
-
+} from "@apollo/client";
+import "./index.css";
 
 const client = new ApolloClient({
-  link:  '/graphql',
+  link: "/graphql",
   cache: new InMemoryCache(),
 });
 
 function App() {
   return (
     <>
-    <ApolloProvider client={client}>
-
-      <ThemeProvider theme={theme}>
-        <Outlet />
-      </ThemeProvider>
-
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+          <ThemeProvider theme={theme}>
+            <Outlet />
+          </ThemeProvider>
+      </ApolloProvider>
     </>
   );
 }
