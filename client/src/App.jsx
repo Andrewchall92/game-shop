@@ -8,9 +8,10 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
+
   createHttpLink,
 } from '@apollo/client';
-import './index.css'
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -27,23 +28,21 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link:  authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
 function App() {
   return (
     <>
-    <ApolloProvider client={client}>
-      <StoreProvider>
-      <ThemeProvider theme={theme}>
-        <Outlet />
-      </ThemeProvider>
-      </StoreProvider>
-
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+        <StoreProvider>
+          <ThemeProvider theme={theme}>
+            <Outlet />
+          </ThemeProvider>
+        </StoreProvider>
+      </ApolloProvider>
     </>
   );
 }
-
 export default App;

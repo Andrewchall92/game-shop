@@ -15,7 +15,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
-import { TOGGLE_CART } from "../utils/actions";
 
 
 const StyledToolbar = styled(Toolbar)({
@@ -35,6 +34,33 @@ const Icons = styled(Box)(({ theme }) => ({
   gap: "20px",
 }));
 
+function showLogin() {
+  if (Auth.loggedIn()) {
+    return (
+      <MenuItem>
+      <a href="/" onClick={() => Auth.logout()}>
+        Logout
+      </a> 
+      </MenuItem>
+    )} else {
+      return (
+        <ul className="flex-row">
+          <li className="mx-1">
+            <Link to="/signup">
+              Signup
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/login">
+              Login
+            </Link>
+          </li>
+        </ul>
+    
+      )
+  }
+}
+
 export const Navbar = ({ toggleCart }) => {
   const [open, setOpenAccount] = useState(false);
   const [openNoti, setOpenNoti] = useState(false);
@@ -45,7 +71,7 @@ export const Navbar = ({ toggleCart }) => {
         <Typography variant="h5" style={{
         fontFamily: 'Staatliches', 
         fontWeight: 'bold'}} id='branding' sx={{ display: { xs: "none", sm: "block" } }}>
-          BORING GAME
+          BORING GAME SHOP
         </Typography>
         <VideogameAssetIcon sx={{ display: { sm: "none", xs: "block" } }} />
         <Search>
@@ -107,12 +133,9 @@ export const Navbar = ({ toggleCart }) => {
             My account
             </Link>
            </MenuItem>
-            <MenuItem>
-            <Link
-            to="/login"
-            >Sign In
-            </Link> </MenuItem>
-            
+           <MenuItem>
+            {showLogin()}
+            </MenuItem>
           
           </Menu>
         </Icons>
