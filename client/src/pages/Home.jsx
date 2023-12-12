@@ -5,6 +5,7 @@ import { Navbar } from "../components/Navbar";
 import { Rightbar } from "../components/Rightbar";
 import { Sidebar } from "../components/Sidebar";
 import { Box, Stack } from "@mui/material";
+import HomeContent from "../components/HomeContent";
 
 
 
@@ -18,7 +19,7 @@ const Home = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'Home':
-        return <Home />;
+        return <HomeContent />;
       // case 'Favorite':
       //   return <Favorite />;
       //   case 'Favorite':
@@ -38,18 +39,7 @@ const Home = () => {
       <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar currentPage={currentPage} handlePageChange={handlePageChange} />
 
-        <Box flex={4} p={2} className="main-display">
-        
-        
-        {products.map((product) => ( 
-            <ProductCard
-              name={product.name}
-              price={product.price}
-              description={product.description}
-              image={product.image}
-              category={product.category}/>
-        ))}
-        </Box>
+        <Box  flex={4} p={2} className="main-display" >{renderPage()}</Box>
 
        <Rightbar />
       </Stack>

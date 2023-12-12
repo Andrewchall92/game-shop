@@ -1,9 +1,9 @@
 import React from "react";
-import products from "../utils/products";
+import {products} from "../utils/products";
 import { Box } from "@mui/material";
-import { ProductCard } from "../components/Card";
+import { ProductCard } from "./Card";
 
-const Home = () => {
+const HomeContent = () => {
   return (
     <Box flex={4} p={2} className="main-display">
       {products.map((product) => (
@@ -19,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeContent;
