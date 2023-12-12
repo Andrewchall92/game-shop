@@ -10,8 +10,8 @@ import {
   ADD_TO_CART,
   UPDATE_PRODUCTS,
 } from '../utils/actions';
-// import { QUERY_PRODUCTS } from '../utils/queries';
-// import { idbPromise } from '../utils/helpers';
+import { QUERY_PRODUCTS } from '../utils/queries';
+import { idbPromise } from '../utils/helpers';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();

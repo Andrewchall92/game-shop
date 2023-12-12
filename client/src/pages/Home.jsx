@@ -8,6 +8,7 @@ import { Box, Stack } from "@mui/material";
 import Feeds from "../components/Feeds";
 import Coupons from "../components/Coupons"; 
 import Favorite from "../components/Favorite";
+import Cart from "../components/Cart";
 
 
 
@@ -25,8 +26,8 @@ const Home = () => {
         return <Favorite />;
         case 'Coupons':
         return <Coupons />;
-      // case 'Setting':
-      //   return <Setting />;
+      case 'Setting':
+        return <Setting />;
       // default:
       //   return <Contact />;
     }
@@ -37,6 +38,7 @@ const Home = () => {
   return (
     <Box>
       <Navbar  />
+      <Cart />
       <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar currentPage={currentPage} handlePageChange={handlePageChange} />
 
