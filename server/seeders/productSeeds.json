@@ -44,5 +44,103 @@
         "image": "https://upload.wikimedia.org/wikipedia/en/6/6b/Black_Ops_Cold_War_cover_art.jpg",
         "price": 59.99,
         "category": "categories[1]._id"
+    },
+    {
+        "name": "Call of Duty: Black Ops 4",
+        "description": "Call of Duty: Black Ops 4 (stylized as Call of Duty: Black Ops IIII) is a 2018 multiplayer first-person shooter developed by Treyarch and published by Activision. It was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on October 12, 2018. It is a sequel to the 2015 game Call of Duty: Black Ops III, the fifth entry in the Black Ops sub-series, and the 15th installment in the Call of Duty series overall.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/00/Call_of_Duty_Black_Ops_4_Official_Box_Art.jpg",
+        "price": 59.99,
+        "category": "categories[1]._id"
+    },
+    {
+        "name": "Call of Duty: Black Ops III",
+        "description": "Call of Duty: Black Ops III is a 2015 first-person shooter video game, developed by Treyarch and published by Activision. It is the twelfth entry in the Call of Duty series and the sequel to the 2012 video game Call of Duty: Black Ops II. It was released on Microsoft Windows, PlayStation 4, and Xbox One on November 6, 2015. A feature-limited version developed by Beenox and Mercenary Technology that only supports multiplayer modes was released on PlayStation 3 and Xbox 360 and was also the final Call of Duty title released on those platforms.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/5e/Black_Ops_III.jpg",
+        "price": 59.99,
+        "category": "categories[1]._id"
+    },
+    {
+        "name": "Call of Duty: Black Ops II",
+        "description": "Call of Duty: Black Ops II is a 2012 first-person shooter developed by Treyarch and published by Activision. It was released for Microsoft Windows, PlayStation 3, and the Xbox 360 on November 13, 2012, and for the Wii U on November 18 in North America and November 30 in PAL regions. Black Ops II is the ninth game in the Call of Duty franchise of video games, a sequel to the 2010 game Call of Duty: Black Ops and the first Call of Duty game for the Wii U. A corresponding game for the PlayStation Vita, Call of Duty: Black Ops: Declassified, was developed by nStigate Games and also released on November 13.", 
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/53/Call_of_Duty_Black_Ops_II_box_artwork.png",
+        "price": 59.99,
+        "category": "categories[1]._id"
+    },
+    {
+        "name": "Call of Duty: Black Ops",
+        "description": "Call of Duty: Black Ops is a 2010 first-person shooter video game developed by Treyarch and published by Activision. It was released worldwide in November 2010 for Microsoft Windows, the PlayStation 3, Xbox 360, and Wii, with a separate version for Nintendo DS developed by n-Space. Aspyr later released the game for OS X in September 2012. It is the seventh title in the Call of Duty series and the third to be developed by Treyarch. It serves as the sequel to Call of Duty: World at War.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/6/67/Black_Ops_cover.png",
+        "price": 59.99,
+        "category": "categories[1]._id"
+    },
+    {
+        "name": "Call of Duty: Modern Warfare 2",
+        "description": "Call of Duty: Modern Warfare 2 is a 2009 first-person shooter game developed by Infinity Ward and published by Activision. It is the sixth installment in the Call of Duty series and the direct sequel to Call of Duty 4: Modern Warfare, continuing the storyline. It was released worldwide on November 10, 2009, for Microsoft Windows, the PlayStation 3, and Xbox 360. A separate version for the Nintendo DS, titled Modern Warfare: Mobilized, was also released on the same day. A version for macOS was developed by Aspyr and released in May 2014, and the Xbox 360 version was made backward compatible for the Xbox One in 2018.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/d/d0/Modern_Warfare_2_cover.PNG",
+        "price": 59.99,
+        "category": "categories[1]._id"
+    },
+    {
+        "name": "Dishonored 2",
+        "description":  "Dishonored 2 is an action-adventure video game developed by Arkane Studios and published by Bethesda Softworks. The sequel to 2012's Dishonored, the game was released for Microsoft Windows, PlayStation 4, and Xbox One on 11 November 2016.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/1/1b/Dishonored_2_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "Football Manager 2021",
+        "description": "Football Manager 2021 is a football management simulation video game developed by Sports Interactive and published by Sega. It was released worldwide on 24 November 2020 for iOS, Android, macOS and Windows.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/0f/Football_Manager_2021_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "RoboCop: Rogue City",
+        "description": "RoboCop: Rogue City is an upcoming first-person shooter video game developed by Teyon and published by Nacon. It is based on the RoboCop franchise, and is set to be released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S in 2023.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/0f/Football_Manager_2021_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "Starcraft 2",
+        "description": "StarCraft II: Wings of Liberty is a science fiction real-time strategy video game developed and published by Blizzard Entertainment. It was released worldwide in July 2010 for Microsoft Windows and Mac OS X. A sequel to the 1998 video game StarCraft and the Brood War expansion pack, the game is split into three installments: the base game, subtitled Wings of Liberty, an expansion pack, Heart of the Swarm, and a stand-alone expansion pack, Legacy of the Void.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/1/19/StarCraft_II_-_Box_Art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "MADDEN NFL 21",
+        "description": "Madden NFL 21 is an American football video game based on the National Football League (NFL), developed by EA Tiburon and published by Electronic Arts. It is an installment of the long-running Madden NFL series. It was released for Microsoft Windows, PlayStation 4 and Xbox One on August 28, 2020, and will be available for PlayStation 5 and Xbox Series X/S upon those consoles' releases in November 2020. It features Baltimore Ravens quarterback Lamar Jackson as the cover athlete.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/5f/Madden_NFL_21_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "Fifa 21",
+        "description": "FIFA 21 is a football simulation video game published by Electronic Arts as part of the FIFA series. It is the 28th installment in the FIFA series, and was released 9 October 2020 for Microsoft Windows, Nintendo Switch, PlayStation 4 and Xbox One. Enhanced versions for the PlayStation 5 and Xbox Series X and Series S were released on 3 December 2020, in addition to a version for Stadia.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/93/FIFA_21_Standard_Edition_cover.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "NBA 2K21",
+        "description": "NBA 2K21 is a basketball simulation video game that was developed by Visual Concepts and published by 2K Sports, based on the National Basketball Association (NBA). It is the 22nd installment in the NBA 2K franchise and the successor to NBA 2K20. The game was released on September 4, 2020 for Microsoft Windows, Nintendo Switch, PlayStation 4, Xbox One, and Stadia, and will be released in November 2020 for PlayStation 5 and Xbox Series X and Series S.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/0c/NBA_2K21_Standard_Edition_cover.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name" : "Frostpunk",
+        "description": "Frostpunk is a city-building survival game developed and published by 11 bit studios. It was released for Microsoft Windows in April 2018, and was released for PlayStation 4 and Xbox One in October 2019. The game received generally positive reviews upon release and sold over 1.4 million copies within a year of release.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/0c/Frostpunk_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
+    },
+    {
+        "name": "Hogwarts Legacy",
+        "description": "Hogwarts Legacy is an upcoming action role-playing video game set in the late 1800s in the Wizarding World being developed by Avalanche Software and published by Warner Bros. Interactive Entertainment under its Portkey Games label. The game will be released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S in 2022.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/0/0c/Frostpunk_cover_art.jpg",
+        "price": 59.99,
+        "category": "categories[0]._id"
     }
 ]
