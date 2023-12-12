@@ -6,7 +6,6 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink,
 } from '@apollo/client';
 import './index.css'
 
@@ -22,7 +21,9 @@ function App() {
     <ApolloProvider client={client}>
 
       <ThemeProvider theme={theme}>
+        
         <Outlet />
+
       </ThemeProvider>
 
     </ApolloProvider>
