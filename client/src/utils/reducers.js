@@ -12,7 +12,7 @@ import {
   ADD_REVIEW,
   UPDATE_REVIEWS,
   REMOVE_REVIEW
-  
+    
 } from "./actions";
 
 export const reducer = (state, action) => {
