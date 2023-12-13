@@ -77,6 +77,7 @@ const typeDefs = `
     checkout(products: [ProductInput]): Checkout
     getAllLikes: [Product]
     GetReviews: [Product]
+    allUsers: [User]
   }
 
   type Mutation {
@@ -86,7 +87,7 @@ const typeDefs = `
     updateProduct(_id: ID!, quantity: Int!): Product
     addReview(productId: ID!, commentText: String!): Product
     removeReview(productId: ID!, reviewId: ID!): Product
-    logIn(email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
     createCoupon(name: String!, discount: Float!, expiration: String!): Coupon
     addLike(_id: ID!): Product
     removeLike(_id: ID!): Product

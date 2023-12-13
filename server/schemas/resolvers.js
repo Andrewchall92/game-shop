@@ -22,6 +22,7 @@ const resolvers = {
 
       return await Product.find(params).populate('category');
     },
+
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
     },
@@ -40,6 +41,11 @@ const resolvers = {
 
       throw AuthenticationError;
     },
+
+    allUsers: async () => {
+      return await User.find({})
+    },
+
     order: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -52,6 +58,7 @@ const resolvers = {
 
       throw AuthenticationError;
     },
+
     getAllLikes: async (parent, { _id }) => {
       const product = await Product.findById(_id).populate('likes');
 
@@ -145,13 +152,13 @@ const resolvers = {
       );
     },
 
-    logIn: async (parent, { email, password }) => {
+    login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      console.log(user)
+      console.log("This is a login");
       if (!user) {
         throw AuthenticationError;
       }
-
+      console.log(email, password);
       const correctPw = await user.isCorrectPassword(password);
       console.log("password is :   " + correctPw)
       if (!correctPw) {
