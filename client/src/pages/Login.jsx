@@ -12,6 +12,11 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../utils/mutations';
+import Auth from '../utils/auth';
+
 
 
 function Copyright(props) {
@@ -29,16 +34,31 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-function Login () {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        });
-      };
-    
+function Login (props) {
+  const [formState, setFormState] = useState({ email: 'bkernighan@techfriends.dev', password: 'password01' });
+  const [login, { error }] = useMutation(LOGIN);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
       return (
         <ThemeProvider theme={defaultTheme}>
           <Grid container component="main" sx={{ height: '1400px' }} width='100%'>
@@ -73,7 +93,7 @@ function Login () {
                 <Typography component="h1" variant="h5">
                   Sign in
                 </Typography>
-                <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                <Box component="form" noValidate onSubmit={handleFormSubmit} sx={{ mt: 1 }}>
                   <TextField
                     margin="normal"
                     required
@@ -83,6 +103,7 @@ function Login () {
                     name="email"
                     autoComplete="email"
                     autoFocus
+                    onChange={handleChange}
                   />
                   <TextField
                     margin="normal"
@@ -93,6 +114,7 @@ function Login () {
                     type="password"
                     id="password"
                     autoComplete="current-password"
+                    onChange={handleChange}
                   />
                   <FormControlLabel
                     control={<Checkbox value="remember" color="primary" />}

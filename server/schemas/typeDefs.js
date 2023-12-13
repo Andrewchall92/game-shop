@@ -75,6 +75,7 @@ const typeDefs = `
     order(_id: ID!): Order
     checkout(products: [ProductInput]): Checkout
     getAllLikes: [Product]
+    GetReviews: [Product]
   }
 
   type Mutation {

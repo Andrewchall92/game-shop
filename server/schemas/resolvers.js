@@ -7,7 +7,7 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    productsByCategory: async (parent, { category, name }) => {
+    products: async (parent, { category, name }) => {
       const params = {};
 
       if (category) {
@@ -21,9 +21,6 @@ const resolvers = {
       }
 
       return await Product.find(params).populate('category');
-    },
-    products: async () => {
-      return Product.find();
     },
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
@@ -55,6 +52,12 @@ const resolvers = {
 
       throw AuthenticationError;
     },
+    getAllLikes: async (parent, { _id }) => {
+      const product = await Product.findById(_id).populate('likes');
+
+      return product.likes;
+    },
+  
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       await Order.create({ products: args.products.map(({ _id }) => _id) });
@@ -87,15 +90,7 @@ const resolvers = {
 
       return { session: session.id };
     },
-
-    getAllLikes: async (parent, { _id }) => {
-      const product = await Product.findById(_id).populate('likes');
-
-      return product.likes;
-    }
   },
-  
-
 
   Mutation: {
     addUser: async (parent, args) => {
