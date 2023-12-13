@@ -40,6 +40,7 @@ function showLogin() {
   if (Auth.loggedIn()) {
     return (
       <MenuItem>
+      
         <a href="/" onClick={() => Auth.logout()}>
           Logout
         </a>
@@ -47,15 +48,17 @@ function showLogin() {
     );
   } else {
     return (
-      <Divider>
      
-        <MenuItem>
+     <div>
+      
+       <MenuItem>
        
           <Link to="/signup">
             Sign Up
           </Link>
       
       </MenuItem>
+      
       <MenuItem>
       
           <Link to="/login">
@@ -63,9 +66,11 @@ function showLogin() {
           </Link>
    
       </MenuItem>
+     </div>
+       
    
 
-      </Divider>
+     
       
      
     );
@@ -124,7 +129,7 @@ export const Navbar = ({ toggleCart }) => {
             My account
             </Link>
            </MenuItem>
-      
+           <Divider />
             {showLogin()}
         
           

@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, Container } from "@mui/material";
 import { Navbar } from "../components/Navbar";
 import { Sidebar } from "../components/Sidebar";
 import {TOGGLE_CART} from "../utils/actions";
 import { useStoreContext } from "../utils/GlobalState";
+import Auth from "../utils/auth";
 
 const Profile = () => {
     const [ state, dispatch] = useStoreContext();
@@ -13,13 +14,23 @@ const Profile = () => {
     
 
     return (
+        
         <Box>
             <Navbar toggleCart={toggleCart} />
             <Stack direction="row" spacing={2} justifyContent="space-between">
-               
+               <Container>
+{Auth.loggedIn() ? (
                 <Box flex={4} p={2} className="main-display">
-                    <Typography variant="h4">Profile</Typography>
+                    <Typography variant="h4">Log in</Typography>
                 </Box>
+
+        ) : (
+            <Box flex={4} p={2} className="main-display">
+                    <Typography variant="h4">Not Log in</Typography>
+                </Box>
+        )}
+               </Container>
+                
             </Stack>
         </Box>
     );
@@ -27,3 +38,8 @@ const Profile = () => {
 
 
 export default Profile;
+
+
+
+
+
