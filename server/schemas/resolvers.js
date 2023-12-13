@@ -145,15 +145,15 @@ const resolvers = {
       );
     },
 
-    login: async (parent, { email, password }) => {
+    logIn: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
+      console.log(user)
       if (!user) {
         throw AuthenticationError;
       }
 
       const correctPw = await user.isCorrectPassword(password);
-
+      console.log("password is :   " + correctPw)
       if (!correctPw) {
         throw AuthenticationError;
       }

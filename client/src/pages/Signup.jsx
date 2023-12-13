@@ -15,7 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../styles/SignUp/styles.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-import AuthService from '../utils/auth';
+import Auth from '../utils/auth';
 
 
 function Copyright(props) {
@@ -30,6 +30,11 @@ function Copyright(props) {
     </Typography>
   );
 }
+function generateRandomNumber() {
+  const randomNumber = Math.floor(Math.random() * 900000000) + 100000000;
+  return randomNumber.toString();
+}
+
 
 const defaultTheme = createTheme();
 
@@ -40,6 +45,7 @@ function Signup() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
+      _id: generateRandomNumber(),
       firstName: data.get('firstName'),
       lastName: data.get('lastName'),
       email: data.get('email'),
@@ -62,7 +68,7 @@ function Signup() {
       },
     });
     const token = mutationResponse.data.addUser.token;
-    AuthService.login(token);
+    Auth.login(token);
   };
 
   

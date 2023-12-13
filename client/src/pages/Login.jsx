@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
+
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -35,26 +35,27 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 function Login () {
-  const [signIn, { error }] = useMutation(LOGIN);
+  const [logIn, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    try {
-      
+
       const data = new FormData(e.currentTarget);
       console.log({
         email: data.get('email'),
         password: data.get('password'),
       });
 
-      const mutationResponse = await signIn({
+      const mutationResponse = await logIn({
         variables: { email: data.get('email'), password: data.get('password') },
       });
       const token = mutationResponse.data.login.token;
-      Auth.login(token);
-    } catch (e) {
-      console.log(e);
-    }
+      const success = Auth.login(token);
+      if(success){
+        window.location('/');
+      }
+      else {alert('Incorrect email or password')}
+    
   };
 
 
@@ -125,6 +126,7 @@ function Login () {
                     fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
+                    
 
                   >
                     Sign In
