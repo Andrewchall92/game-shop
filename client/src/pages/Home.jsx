@@ -23,7 +23,7 @@ const Home = () => {
   const toggleCart = () => {
     dispatch({ type: TOGGLE_CART });
   }
-
+  const handlePageChange = (page) => setCurrentPage(page);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -33,8 +33,8 @@ const Home = () => {
         return <Favorite />;
         case 'Coupons':
         return <Coupons />;
-      // case 'Setting':
-      //   return <Setting />;
+      // case 'Profile':
+      //   return <Profile />;
      case 'contact':
         return <Contact />;
         case 'Cart':
@@ -42,7 +42,7 @@ const Home = () => {
     }
   };
 
-  const handlePageChange = (page) => setCurrentPage(page);
+
 
   return (
     <Box>
