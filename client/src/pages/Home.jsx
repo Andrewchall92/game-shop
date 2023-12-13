@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import{ ProductCard } from "../components/Card";
 import "../App.css";
 import { Navbar } from "../components/Navbar";
@@ -8,9 +8,10 @@ import { Box, Stack } from "@mui/material";
 import Feeds from "../components/Feeds";
 import Coupons from "../components/Coupons"; 
 import Favorite from "../components/Favorite";
+import Contact from "../components/Contact";
+import { useStoreContext } from "../utils/GlobalState";
 import Cart from "../components/Cart";
-import { useStoreContext } from '../utils/GlobalState';
-import { TOGGLE_CART } from '../utils/actions';
+import Auth from "../utils/auth";
 
 
 
@@ -32,10 +33,10 @@ const Home = () => {
         return <Favorite />;
         case 'Coupons':
         return <Coupons />;
-      case 'Setting':
-        return <Setting />;
-      // default:
-      //   return <Contact />;
+      // case 'Setting':
+      //   return <Setting />;
+     case 'contact':
+        return <Contact />;
     }
   };
 
