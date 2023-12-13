@@ -34,8 +34,8 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-function Login () {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+function Login (props) {
+  const [formState, setFormState] = useState({ email: 'bkernighan@techfriends.dev', password: 'password01' });
   const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (event) => {

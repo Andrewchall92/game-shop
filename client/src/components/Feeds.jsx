@@ -12,7 +12,7 @@ import { idbPromise } from '../utils/helpers';
 const Feeds = () => {
   const [state, dispatch] = useStoreContext();
 
-  const { currentCategory } = state;
+  // const { currentCategory } = state;
 
   const {loading, data , error} = useQuery(QUERY_ALL_PRODUCTS);
 
@@ -39,22 +39,14 @@ const Feeds = () => {
     }
   }, [data, loading, dispatch]);
 
-  function filterProducts() {
-    if (!currentCategory) {
-      return state.products;
-    }
 
-    return state.products.filter(
-      (product) => product.category._id === currentCategory
-    );
-  }
 
   return (
     <>
-    <Box flex={4} p={2} className="main-display">
+    <Box flex={4} p={2} >
       {state.products.length ? (
-    <div>
-      {filterProducts().map((product) => (
+    <Box className="main-display">
+      {state.products.map((product) => (
         <ProductCard
           key={product._id}
           id={product._id}
@@ -65,7 +57,7 @@ const Feeds = () => {
           category={product.category}
         />
       ))}
-    </div>
+    </Box>
   ) : (
     <h3>You haven't added any products yet!</h3>
   )}
