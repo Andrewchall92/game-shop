@@ -1,69 +1,71 @@
+import React from "react";
+import { Box } from "@mui/material";
+import {
+  Avatar,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  TextField,
+  Typography,
+} from "@mui/material";
+ import {useState} from 'react';
+
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 
-import React from 'react';
-import { Box } from '@mui/material';
-import { Avatar, Button, Checkbox, FormControlLabel, TextField, Typography } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+
 
 const Contact = () => {
+    const [formState, setFormState] = useState({ message: "" });
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.location.href = '/';
+        window.location.href = "/";
     };
 
     return (
         <Box
             sx={{
-                my: 8,
-                mx: 4,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
+                display: "flex",
+                justifyContent: "center",
+                
+                height: "100vh",
             }}
         >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-                Sign in
-            </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    autoComplete="email"
-                    autoFocus
-                />
-                <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    autoComplete="current-password"
-                />
-                <FormControlLabel
-                    control={<Checkbox value="remember" color="primary" />}
-                    label="Remember me"
-                />
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    sx={{ mt: 3, mb: 2 }}
-                >
-                    Sign In
-                </Button>
+            <Box
+                sx={{
+                    my: 8,
+                    mx: 40,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    mt: 20,
+                }}
+            >
+                <Typography color="black" component="h1" variant="h3" id="contact-message">
+                    Send Us A Message
+                </Typography>
+                <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                    <TextField
+                        fullWidth
+                        id="message"
+                        label="Write your message here"
+                        multiline
+                        maxRows={6}
+                        variant="standard"
+                        sx={{ mt: 3, mb: 2, width: "50ch" }}
+                    />
+                    <Button
+                        type="submit"
+                        
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                    >
+                        Sign In
+                    </Button>
+                </Box>
             </Box>
         </Box>
     );
 };
-
 
 export default Contact;

@@ -37,7 +37,7 @@ const typeDefs = `
   }
 
   type User {
-    _id: ID
+    id: ID
     firstName: String
     lastName: String
     address: String
@@ -46,6 +46,7 @@ const typeDefs = `
     zip: String
     email: String
     orders: [Order]
+    isAdmin: Boolean
   }
 
   type Checkout {
@@ -85,7 +86,7 @@ const typeDefs = `
     updateProduct(_id: ID!, quantity: Int!): Product
     addReview(productId: ID!, commentText: String!): Product
     removeReview(productId: ID!, reviewId: ID!): Product
-    login(email: String!, password: String!): Auth
+    logIn(email: String!, password: String!): Auth
     createCoupon(name: String!, discount: Float!, expiration: String!): Coupon
     addLike(_id: ID!): Product
     removeLike(_id: ID!): Product
