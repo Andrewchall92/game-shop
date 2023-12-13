@@ -5,11 +5,13 @@
     min-width: 20%;
     max-width: 30%;
     max-height: 60%;
-    background-color: var(--light);
     overflow: auto;
     padding: .5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
     border-bottom-left-radius: .5rem;
+    color: blue;
+    background-color: lightgray;
+    opacity: 0.9;
   }
   
   .cart h2 {
