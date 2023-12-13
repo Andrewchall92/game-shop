@@ -34,8 +34,8 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-function Login () {
-  const [logIn, { error }] = useMutation(LOGIN);
+function Login (props) {
+  const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +46,7 @@ function Login () {
         password: data.get('password'),
       });
 
-      const mutationResponse = await logIn({
+      const mutationResponse = await login({
         variables: { email: data.get('email'), password: data.get('password') },
       });
       const token = mutationResponse.data.login.token;
