@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import{ ProductCard } from "../components/Card";
 import "../App.css";
 import { Navbar } from "../components/Navbar";
@@ -8,13 +8,21 @@ import { Box, Stack } from "@mui/material";
 import Feeds from "../components/Feeds";
 import Coupons from "../components/Coupons"; 
 import Favorite from "../components/Favorite";
-
+import Contact from "../components/Contact";
+import { useStoreContext } from "../utils/GlobalState";
+import Cart from "../components/Cart";
+import Auth from "../utils/auth";
 
 
 
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState('Home');
+  const [state, dispatch] = useStoreContext();
+
+  const toggleCart = () => {
+    dispatch({ type: TOGGLE_CART });
+  }
 
 
   const renderPage = () => {
@@ -27,8 +35,8 @@ const Home = () => {
         return <Coupons />;
       // case 'Setting':
       //   return <Setting />;
-      // default:
-      //   return <Contact />;
+     case 'contact':
+        return <Contact />;
     }
   };
 
@@ -36,12 +44,11 @@ const Home = () => {
 
   return (
     <Box>
-      <Navbar  />
+      <Navbar toggleCart={toggleCart} />
       <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar currentPage={currentPage} handlePageChange={handlePageChange} />
-
         <Box  flex={4} p={2} className="main-display" >{renderPage()}</Box>
-
+        <Cart />  
        <Rightbar />
       </Stack>
     </Box>
