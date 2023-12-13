@@ -9,7 +9,9 @@ import Feeds from "../components/Feeds";
 import Coupons from "../components/Coupons"; 
 import Favorite from "../components/Favorite";
 import Contact from "../components/Contact";
-
+import { useStoreContext } from "../utils/GlobalState";
+import Cart from "../components/Cart";
+import Auth from "../utils/auth";
 
 
 
