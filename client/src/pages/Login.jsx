@@ -34,12 +34,12 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-function Login (props) {
+function Login () {
   const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+      
       const data = new FormData(e.currentTarget);
       console.log({
         email: data.get('email'),
