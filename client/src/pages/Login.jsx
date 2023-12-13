@@ -34,15 +34,21 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-function Login (props) {
-  const [formState, setFormState] = useState({ email: 'bkernighan@techfriends.dev', password: 'password01' });
-  const [login, { error }] = useMutation(LOGIN);
+function Login () {
+  const [signIn, { error }] = useMutation(LOGIN);
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
+      
+      const data = new FormData(e.currentTarget);
+      console.log({
+        email: data.get('email'),
+        password: data.get('password'),
+      });
+
+      const mutationResponse = await signIn({
+        variables: { email: data.get('email'), password: data.get('password') },
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
@@ -51,13 +57,7 @@ function Login (props) {
     }
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+
 
       return (
         <ThemeProvider theme={defaultTheme}>
@@ -93,7 +93,7 @@ function Login (props) {
                 <Typography component="h1" variant="h5">
                   Sign in
                 </Typography>
-                <Box component="form" noValidate onSubmit={handleFormSubmit} sx={{ mt: 1 }}>
+                <Box component="form" onSubmit={handleFormSubmit} sx={{ mt: 1 }}>
                   <TextField
                     margin="normal"
                     required
@@ -103,7 +103,7 @@ function Login (props) {
                     name="email"
                     autoComplete="email"
                     autoFocus
-                    onChange={handleChange}
+                   
                   />
                   <TextField
                     margin="normal"
@@ -114,7 +114,7 @@ function Login (props) {
                     type="password"
                     id="password"
                     autoComplete="current-password"
-                    onChange={handleChange}
+                  
                   />
                   <FormControlLabel
                     control={<Checkbox value="remember" color="primary" />}
@@ -125,10 +125,7 @@ function Login (props) {
                     fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
-                    onClick = {(e) => {
-                      e.preventDefault();
-                      window.location.href='/';
-                    }}
+
                   >
                     Sign In
                   </Button>
@@ -153,3 +150,4 @@ function Login (props) {
       );
     }
 export default Login;
+

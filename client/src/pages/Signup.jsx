@@ -13,10 +13,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../styles/SignUp/styles.css';
-import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-import Auth from '../utils/auth';
+import AuthService from '../utils/auth';
 
 
 function Copyright(props) {
@@ -34,35 +33,39 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+function Signup() {
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      firstName: data.get('firstName'),
+      lastName: data.get('lastName'),
+      email: data.get('email'),
+      password: data.get('password'),
+      address: data.get('address'),
+      city: data.get('city'),
+      zip: data.get('zip'),
+      state: data.get('state'),
+    })
     const mutationResponse = await addUser({
       variables: {
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-        email: formState.email,
-        password: formState.password,
-        address: formState.address,
-        city: formState.city,
-        state: formState.state,
-        zip: formState.zip,
+        firstName: data.get('firstName'),
+        lastName: data.get('lastName'),
+        email: data.get('email'),
+        password: data.get('password'),
+        address: data.get('address'),
+        city: data.get('city'),
+        zip: data.get('zip'),
+        state: data.get('state'),
       },
     });
     const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+    AuthService.login(token);
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+  
     
       return (
         
@@ -96,7 +99,7 @@ function Signup(props) {
                       id="firstName"
                       label="First Name"
                       autoFocus
-                      onChange={handleChange}
+                   
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
@@ -107,7 +110,7 @@ function Signup(props) {
                       label="Last Name"
                       name="lastName"
                       autoComplete="family-name"
-                      onChange={handleChange}
+                      
                     />
                   </Grid>
             
@@ -119,7 +122,7 @@ function Signup(props) {
                       label="Address"
                       id="address"
                       autoComplete="new-address"
-                      onChange={handleChange}
+                    
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -130,7 +133,7 @@ function Signup(props) {
                       label="City"
                       id="city"
                       autoComplete="new-city"
-                      onChange={handleChange}
+                     
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -141,7 +144,7 @@ function Signup(props) {
                       label="State"
                       id="state"
                       autoComplete="new-state"
-                      onChange={handleChange}
+                   
                     />
                   </Grid>
                   <Grid item xs={6}>
@@ -152,7 +155,7 @@ function Signup(props) {
                       label="Zipcode"
                       id="zip"
                       autoComplete="new-zip"
-                      onChange={handleChange}
+                      
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -163,7 +166,7 @@ function Signup(props) {
                       label="Email Address"
                       name="email"
                       autoComplete="email"
-                      onChange={handleChange}
+                      
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -175,7 +178,7 @@ function Signup(props) {
                       type="password"
                       id="password"
                       autoComplete="new-password"
-                      onChange={handleChange}
+                      
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -190,10 +193,7 @@ function Signup(props) {
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
-                  onClick = {(e) => {
-                    e.preventDefault();
-                    window.location.href='/';
-                  }}
+  
               
                 >
                   Sign Up
