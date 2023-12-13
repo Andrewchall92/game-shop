@@ -61,9 +61,24 @@ userSchema.pre('save', async function(next) {
 
   next();
 });
+//bcrypt seed passwords
+
+userSchema.pre('insertMany', async function(next, docs, err) {
+  docs.map (await async function(doc) {
+    
+      const saltRounds = 10;
+      doc.password = await bcrypt.hash(doc.password, saltRounds);
+    
+  })
+  
+
+  next();
+});
 
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function(password) {
+  console.log('this.password', this.password);
+  console.log('password', password)
   return await bcrypt.compare(password, this.password);
 };
 
