@@ -6,6 +6,7 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
+import { Link } from "react-router-dom";
 
 export const Sidebar = ({currentPage, handlePageChange}) => {
   return (
@@ -45,17 +46,21 @@ export const Sidebar = ({currentPage, handlePageChange}) => {
             </ListItemButton>
           </ListItem>
 
+              <Link to='./history'>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/setting">
+            <ListItemButton  >
+
+    
               <ListItemIcon>
                 <SettingsIcon/>
               </ListItemIcon>
-              <ListItemText primary="Setting" />
+              <ListItemText primary="Order history" />
             </ListItemButton>
           </ListItem>
 
+              </Link>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/contact">
+            <ListItemButton  component="a"onClick={ ()=> handlePageChange('contact')}>
               <ListItemIcon>
                 <ContactMailIcon/>
               </ListItemIcon>

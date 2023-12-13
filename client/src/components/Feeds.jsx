@@ -50,6 +50,7 @@ const Feeds = () => {
   }
 
   return (
+    <>
     <Box flex={4} p={2} className="main-display">
       {state.products.length ? (
     <div>
@@ -70,6 +71,7 @@ const Feeds = () => {
   )}
     {/* {loading ? <img src={spinner} alt="loading" /> : null} */}
     </Box>
+    </>
   );
 }
 

@@ -3,6 +3,7 @@ import {
   AppBar,
   Badge,
   Box,
+  Divider,
   InputBase,
   Menu,
   MenuItem,
@@ -15,7 +16,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
-import Auth from "../utils/auth.js";
+import Auth from "../utils/auth";
 
 
 const StyledToolbar = styled(Toolbar)({
@@ -39,32 +40,41 @@ function showLogin() {
   if (Auth.loggedIn()) {
     return (
       <MenuItem>
-      <a href="/" onClick={() => Auth.logout()}>
-        Logout
-      </a> 
+        <a href="/" onClick={() => Auth.logout()}>
+          Logout
+        </a>
       </MenuItem>
-    )} else {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">
-              Signup
-            </Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/login">
-              Login
-            </Link>
-          </li>
-        </ul>
-    
-      )
+    );
+  } else {
+    return (
+      <Divider>
+     
+        <MenuItem>
+       
+          <Link to="/signup">
+            Sign Up
+          </Link>
+      
+      </MenuItem>
+      <MenuItem>
+      
+          <Link to="/login">
+            Login
+          </Link>
+   
+      </MenuItem>
+   
+
+      </Divider>
+      
+     
+    );
   }
 }
 
-export const Navbar = () => {
+export const Navbar = ({ toggleCart }) => {
   const [open, setOpenAccount] = useState(false);
-  const [openNoti, setOpenNoti] = useState(false);
+
 
   return (
     <AppBar position="sticky">
@@ -85,33 +95,13 @@ export const Navbar = () => {
             }}
             color="action"
           />
-          <Badge badgeContent={4} color="error">
-            <NotificationsIcon color="action" onClick={(e) => {
-              setOpenNoti(true)}} />
-          </Badge>
+    
 
-          <Badge badgeContent={1} color="error">
-            <ShoppingCartIcon color="action"   />
-          </Badge>
+       
+            <ShoppingCartIcon color="action" onClick={toggleCart} />
+   
           {/* Profile Menu on click */}
-          <Menu
-            id="Noti-Menu"
-            aria-labelledby="demo-positioned-button"
-            open={openNoti}
-            onClose={(e) => setOpenNoti(false)}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-          >
-            <MenuItem href='/profile'>Notification #1</MenuItem>
-            <MenuItem > Notification #2 </MenuItem>
-            <MenuItem > Notification #3 </MenuItem>
-          </Menu>
+
 
           <Menu
             id="profile-menu"
@@ -134,9 +124,9 @@ export const Navbar = () => {
             My account
             </Link>
            </MenuItem>
-           <MenuItem>
+      
             {showLogin()}
-            </MenuItem>
+        
           
           </Menu>
         </Icons>
