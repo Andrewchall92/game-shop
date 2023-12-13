@@ -10,6 +10,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { StoreProvider } from './utils/GlobalState';
 
 
 const httpLink = createHttpLink({
@@ -37,9 +38,11 @@ function App() {
     <>
 
       <ApolloProvider client={client}>
+            <StoreProvider>
           <ThemeProvider theme={theme}>
             <Outlet />
           </ThemeProvider>
+            </StoreProvider>
       </ApolloProvider>
 
     </>

@@ -91,7 +91,7 @@ export const Navbar = () => {
           </Badge>
 
           <Badge badgeContent={1} color="error">
-            <ShoppingCartIcon color="action" z/>
+            <ShoppingCartIcon color="action"   />
           </Badge>
           {/* Profile Menu on click */}
           <Menu
