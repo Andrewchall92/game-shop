@@ -11,7 +11,7 @@ import Favorite from "../components/Favorite";
 import Contact from "../components/Contact";
 import { useStoreContext } from "../utils/GlobalState";
 import Cart from "../components/Cart";
-import Auth from "../utils/auth";
+import { TOGGLE_CART } from "../utils/actions";
 
 
 
@@ -37,6 +37,8 @@ const Home = () => {
       //   return <Setting />;
      case 'contact':
         return <Contact />;
+        case 'Cart':
+          return <Cart />;
     }
   };
 
