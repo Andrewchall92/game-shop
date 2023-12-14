@@ -2,9 +2,20 @@ import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
     palette: {
-        secondary: {
-            main: "#1760a5",
-            light: "skyblue"
+        // Navbar
+        primary: {
+            main: "#0d47a1",
+            dark: "skyblue"
+        },
+
+        // Main
+        error:{
+            main: "#1565c0"
+        }
+        ,
+        // Use for Icon
+        code: {
+            main: "#1565c0"
         }
     }
 })

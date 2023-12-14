@@ -23,7 +23,7 @@ const Home = () => {
   const toggleCart = () => {
     dispatch({ type: TOGGLE_CART });
   }
-
+  const handlePageChange = (page) => setCurrentPage(page);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -33,8 +33,8 @@ const Home = () => {
         return <Favorite />;
         case 'Coupons':
         return <Coupons />;
-      // case 'Setting':
-      //   return <Setting />;
+      // case 'Profile':
+      //   return <Profile />;
      case 'contact':
         return <Contact />;
         case 'Cart':
@@ -42,16 +42,16 @@ const Home = () => {
     }
   };
 
-  const handlePageChange = (page) => setCurrentPage(page);
+
 
   return (
     <Box>
-      <Navbar toggleCart={toggleCart} />
+      <Navbar toggleCart={toggleCart} cart={state.cart} />
       <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar currentPage={currentPage} handlePageChange={handlePageChange} />
         <Box  flex={4} p={2} className="main-display" >{renderPage()}</Box> 
        <Rightbar />
-       <Cart /> 
+       
       </Stack>
     </Box>
   );
