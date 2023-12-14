@@ -8,8 +8,8 @@ import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../utils/actions';
 import '../styles/Cart/style.css';
-
-
+import {Divider} from '@mui/material';
+ 
 
 
 import * as React from 'react';
@@ -79,18 +79,22 @@ const Cart = () => {
       backgroundColor: "#5c6bc0",
       width: "50%", 
       height: "70%",
-      
+      overflow: 'auto',
+      padding: '2rem',
     }}>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" sx={{fontWeight:'bold'}} gutterBottom>
         Order summary
       </Typography>
+      <Divider />
       <List disablePadding>
         {state.cart.map((product) => (
           <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            <ListItemText
-              primary={product.name}
-              secondary={product.description}
-            />
+            <div style={{ width: '50%' }}>
+              <ListItemText
+                primary={product.name}
+                secondary={product.description}
+              />
+            </div>
             <Typography variant="body2">{product.price}</Typography>
           </ListItem>
         ))}

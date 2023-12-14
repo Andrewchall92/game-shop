@@ -114,7 +114,7 @@ export const Navbar = ({ toggleCart, cart }) => {
               alignItems: "center",}}
             
           >
-           <Cart cart={cart} />
+           <Cart />
           </Modal>
 
           <Menu
