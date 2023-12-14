@@ -37,7 +37,7 @@ function App() {
     <>
       <ApolloProvider client={client}>
         <StoreProvider>
-          <ThemeProvider theme={theme}>
+          <ThemeProvider  theme={theme}>
             <Outlet />
           </ThemeProvider>
         </StoreProvider>

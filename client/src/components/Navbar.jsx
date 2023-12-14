@@ -9,15 +9,22 @@ import {
   MenuItem,
   Toolbar,
   Typography,
+  Modal,
+  Button,
+  List,
 } from "@mui/material";
 import React, { useState } from "react";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
+import Cart from "./Cart";
 
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import Grid from "@mui/material/Grid";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -40,7 +47,6 @@ function showLogin() {
   if (Auth.loggedIn()) {
     return (
       <MenuItem>
-      
         <a href="/" onClick={() => Auth.logout()}>
           Logout
         </a>
@@ -48,45 +54,40 @@ function showLogin() {
     );
   } else {
     return (
-     
-     <div>
-      
-       <MenuItem>
-       
-          <Link to="/signup">
-            Sign Up
-          </Link>
-      
-      </MenuItem>
-      
-      <MenuItem>
-      
-          <Link to="/login">
-            Login
-          </Link>
-   
-      </MenuItem>
-     </div>
-       
-   
+      <div>
+        <MenuItem>
+          <Link to="/signup">Sign Up</Link>
+        </MenuItem>
 
-     
-      
-     
+        <MenuItem>
+          <Link to="/login">Login</Link>
+        </MenuItem>
+      </div>
     );
   }
 }
 
-export const Navbar = ({ toggleCart }) => {
-  const [open, setOpenAccount] = useState(false);
 
+
+
+export const Navbar = ({ toggleCart, cart }) => {
+  const [open, setOpenAccount] = useState(false);
+  const [openModal, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" color="primary">
       <StyledToolbar>
-        <Typography variant="h5" style={{
-        fontFamily: 'Staatliches', 
-        fontWeight: 'bold'}} id='branding' sx={{ display: { xs: "none", sm: "block" } }}>
+        <Typography
+          variant="h5"
+          style={{
+            fontFamily: "Staatliches",
+            fontWeight: "bold",
+          }}
+          id="branding"
+          sx={{ display: { xs: "none", sm: "block" } }}
+        >
           BORING GAME SHOP
         </Typography>
         <VideogameAssetIcon sx={{ display: { sm: "none", xs: "block" } }} />
@@ -100,13 +101,21 @@ export const Navbar = ({ toggleCart }) => {
             }}
             color="action"
           />
-    
 
-       
-            <ShoppingCartIcon color="action" onClick={toggleCart} />
-   
+          <ShoppingCartIcon color="action" onClick={toggleCart} />
+
           {/* Profile Menu on click */}
-
+          <ShoppingCartIcon onClick={handleOpen} Open modal />
+          <Modal
+            open={openModal}
+            onClose={handleClose}
+            sx={{display: "flex",
+              justifyContent: "center",
+              alignItems: "center",}}
+            
+          >
+           <Cart cart={cart} />
+          </Modal>
 
           <Menu
             id="profile-menu"
@@ -123,16 +132,10 @@ export const Navbar = ({ toggleCart }) => {
             }}
           >
             <MenuItem>
-            <Link
-            to='./profile'
-            > 
-            My account
-            </Link>
-           </MenuItem>
-           <Divider />
+              <Link to="./profile">My account</Link>
+            </MenuItem>
+            <Divider />
             {showLogin()}
-        
-          
           </Menu>
         </Icons>
       </StyledToolbar>
