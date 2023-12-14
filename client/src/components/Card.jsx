@@ -53,35 +53,35 @@ const [expanded, setExpanded] = useState(false);
         </Grid>
 
 
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <Typography color="text.secondary" variant="body2" sx={{display:{sm:"none", lg:"block"}, fontSize: '0.7rem'}}>
-          {description}
-        
-        </Typography>
-        </Collapse> 
-      </Box>
-      <Divider variant="middle" />
-      
-      <Stack direction="row" spacing={2} justifyContent="space-between" >
-        <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
-          <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-        
-      </Stack>
-     
-      <Box sx={{ m: 2 }}></Box>
-      <Box sx={{ mt: 3, ml: 1, mb: 1 }}>
-      <Stack justifyContent='space-evenly'>
-      <Button onClick={() => addToCart({ name, _id, price, description, quantity: 1, image })}> Add to cart </Button>
-         <Button onClick={()=>{window.location=`/products/${_id}`}} > View this product </Button>
-      </Stack>
-     
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <Typography color="text.secondary" variant="body2" sx={{display:{sm:"none", lg:"block"}, fontSize: '0.7rem'}}>
+            {description}
+          
+          </Typography>
+          </Collapse> 
+        </Box><ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+           
+          </ExpandMore>
+        <Divider variant="middle" />
+         
+        <Stack direction="column" spacing={1} >
+           
+          <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+          
+        </Stack>
+       
+        <Box sx={{ m: 2 }}></Box>
+        <Box sx={{ mt: 3, ml: 1, mb: 1 }}>
+        <Stack justifyContent='space-evenly'>
+           <Button onClick={()=>{window.location=`/products/${_id}`}} > View this product </Button>
+        <Button onClick={() => addToCart({ name, _id, price, description, quantity: 1, image })}> Add to cart </Button>
+        </Stack>
+       
       </Box>
     </Box>
   );
