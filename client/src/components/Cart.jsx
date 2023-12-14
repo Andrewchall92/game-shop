@@ -19,13 +19,16 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
 import { Box } from '@mui/material';
-
+import { useTheme } from '@mui/material/styles'
 
 
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
+
+  const theme = useTheme();
+
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
@@ -76,32 +79,39 @@ const Cart = () => {
   return (
     
     <Box sx={{
-      backgroundColor: "#5c6bc0",
+      backgroundColor: "black",
       width: "50%", 
       height: "70%",
       overflow: 'auto',
       padding: '2rem',
+      
     }}>
-      <Typography variant="h6" sx={{fontWeight:'bold'}} gutterBottom>
+      <Typography variant="h6" color='white' sx={{fontWeight:'bold'}} gutterBottom>
         Order summary
       </Typography>
       <Divider />
       <List disablePadding>
         {state.cart.map((product) => (
-          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            <div style={{ width: '50%' }}>
-              <ListItemText
-                primary={product.name}
-                secondary={product.description}
-              />
+          <ListItem key={product.name} className='singleCartProduct' sx={{ py: 3, px: 1 }}>
+            <div style={{ width: '50%'}}>
+             
+              <Typography color='white' sx={{fontSize:'120%'}}>
+              {product.name}
+              </Typography>    
+              <Typography color='white'>
+              {product.description}
+              </Typography>         
+                
+                
+             
             </div>
-            <Typography variant="body2">{product.price}</Typography>
+            <Typography  sx={{fontSize:"120%" }}  >{product.price}</Typography>
           </ListItem>
         ))}
         <ListItem sx={{ py: 1, px: 0 }}>
-          <ListItemText primary="Total" />
-          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
+         
+          <Typography variant="subtitle1" >
+            {calculateTotal()}
           </Typography>
         </ListItem>
       </List>

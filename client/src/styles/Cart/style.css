@@ -75,4 +75,16 @@
       margin: 0 auto;
     }
   }
+
+
+
   
+.singleCartProduct {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 2px solid #2f2d2d;
+    
+}

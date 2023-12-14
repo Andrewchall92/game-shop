@@ -14,8 +14,8 @@ export const theme = createTheme({
         }
         ,
         // Use for Icon
-        action: {
-            
+        code: {
+            main: "#1565c0"
         }
     }
 })
