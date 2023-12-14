@@ -53,7 +53,7 @@ export function ProductCard({ name, _id,  price, description, image, addToCart }
       <Divider variant="middle" />
       <Box sx={{ m: 2 }}></Box>
       <Box sx={{ mt: 3, ml: 1, mb: 1 }}>
-      <Button onClick={() => addToCart({ name, _id, price, description, quantity: 1 })}>Add to cart</Button>
+      <Button onClick={() => addToCart({ name, _id, price, description, quantity: 1, image })}>Add to cart</Button>
       </Box>
     </Box>
   );
