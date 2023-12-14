@@ -18,6 +18,7 @@ export function pluralize(name, count) {
   return name + 's';
 }
 
+
 export function idbPromise(storeName, method, object) {
   return new Promise((resolve, reject) => {
     const request = window.indexedDB.open('shop-shop', 1);
@@ -44,6 +45,10 @@ export function idbPromise(storeName, method, object) {
 
       switch (method) {
         case 'put':
+          if (!object._id) {
+            console.error('Object must have an _id property: ', object);
+            return;  
+          }
           store.put(object);
           resolve(object);
           break;

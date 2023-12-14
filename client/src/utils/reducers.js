@@ -27,7 +27,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cartOpen: true,
-        cart: [...state.cart, action.product],
+        cart: [...state.cart, action.cart],
       };
 
     case ADD_MULTIPLE_TO_CART:

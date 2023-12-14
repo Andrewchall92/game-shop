@@ -7,10 +7,16 @@ import Typography from "@mui/material/Typography";
 import { CardMedia, Checkbox } from "@mui/material";
 import { FavoriteBorder, Favorite } from '@mui/icons-material';
 
-export function ProductCard({ name, price, description, image, category }) {
+// function generateRandomNumber() {
+//   const randomNumber = Math.floor(Math.random() * 900000000) + 100000000;
+//   return randomNumber.toString();
+// }
+
+export function ProductCard({ name, _id,  price, description, image, addToCart }) {
+  // console.log(name, _id, price, description, image);
   return (
     <Box
-      key={name}
+      key={_id}
       className="flex-item"
       sx={{
         width: { sm: "70%", md: "30%" },
@@ -47,7 +53,7 @@ export function ProductCard({ name, price, description, image, category }) {
       <Divider variant="middle" />
       <Box sx={{ m: 2 }}></Box>
       <Box sx={{ mt: 3, ml: 1, mb: 1 }}>
-        <Button>Add to cart</Button>
+      <Button onClick={() => addToCart({ name, _id, price, description, quantity: 1 })}>Add to cart</Button>
       </Box>
     </Box>
   );
