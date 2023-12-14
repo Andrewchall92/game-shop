@@ -10,20 +10,23 @@ const OneProductPage = () => {
         <Navbar  />
         <Stack direction="row" spacing={2} justifyContent="space-between" sx={{paddingTop:'3%'}}>
           <Container>
-            <Box flex={4} p={2} className="main-display">
-              <Typography variant="h4">Product ID: {id}</Typography>
+            <Box flex={4} p={2} className="main-display" sx={{backgroundColor:"pink"}}>
+              <Typography variant="h4">Product Info</Typography>
+
+
+
             </Box>
           </Container>
 
           <Container>
-            <Box flex={4} p={2} className="main-display">
-              <Typography variant="h4">Product ID: {id}</Typography>
+            <Box flex={4} p={2} className="main-display" sx={{backgroundColor:"skyblue"}}>
+              <Typography variant="h4"> Add Comment</Typography>
             </Box>
           </Container>
 
           <Container>
-            <Box flex={4} p={2} className="main-display">
-              <Typography variant="h4">Product ID: {id}</Typography>
+            <Box flex={4} p={2} className="main-display" sx={{backgroundColor:"yellow"}}>
+              <Typography variant="h4"> Create Comment </Typography>
             </Box>
           </Container>
         </Stack>
