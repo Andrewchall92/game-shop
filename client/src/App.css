@@ -39,3 +39,9 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+#branding:hover {
+    transform: scale(1.2);
+    transition: all 0.6s ease-in-out;
+    color: #4866a7;
+    cursor: pointer;
+}

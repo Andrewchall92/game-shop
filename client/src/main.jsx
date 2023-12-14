@@ -13,6 +13,8 @@ import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Review from "./pages/Review";
 import Profile from './pages/Profile.jsx';
+import SingleProductPage from './pages/SingleProduct.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <Profile />
+      },
+      {
+        path: '/products/:id',
+        element: <SingleProductPage />
       },
       {
         path: '*',
