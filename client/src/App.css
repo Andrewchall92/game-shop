@@ -46,3 +46,7 @@
     cursor: pointer;
     text-shadow: 0 0 10px #172d43;
 }
+
+#productInfo {
+    font-family: 'Josefin Sans', sans-serif;
+}
