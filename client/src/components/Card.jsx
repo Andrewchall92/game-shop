@@ -1,18 +1,25 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
+import React from "react";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import { CardMedia, Checkbox } from "@mui/material";
-import { FavoriteBorder, Favorite } from '@mui/icons-material';
+import { CardMedia, Checkbox , Box} from "@mui/material";
+import { FavoriteBorder, Favorite, ExpandMore } from '@mui/icons-material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Collapse from '@mui/material/Collapse';
+import {useState} from 'react';
 
 // function generateRandomNumber() {
 //   const randomNumber = Math.floor(Math.random() * 900000000) + 100000000;
-//   return randomNumber.toString();
-// }
+//   return randomNumber.toString();ç
 
 export function ProductCard({ name, _id,  price, description, image, addToCart }) {
+
+const [expanded, setExpanded] = useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  }
   // console.log(name, _id, price, description, image);
   return (
     <Box
@@ -43,11 +50,22 @@ export function ProductCard({ name, _id,  price, description, image, addToCart }
             </Typography>
           </Grid>
         </Grid>
+
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
         <Typography color="text.secondary" variant="body2" sx={{display:{sm:"none", lg:"block"}, fontSize: '0.7rem'}}>
           {description}
         
         </Typography>
-        
+        </Collapse>
       </Box>
       <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
       <Divider variant="middle" />
