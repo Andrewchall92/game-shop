@@ -15,7 +15,14 @@ import { Navbar } from "../components/Navbar";
 import CardActions from "@mui/material/CardActions";
 import { useQuery } from "@apollo/client";
 import { QUERY_SINGLE_PRODUCT } from "../utils/queries";
+import { useMutation } from "@apollo/client";
+import { ADD_REVIEW } from "../utils/mutations";
 
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -26,13 +33,31 @@ import Paper from "@mui/material/Paper";
 
 const OneProductPage = () => {
   const { id } = useParams();
-
+  let [rateSelect, setRateSelect] = React.useState("");
+  const { addReview } = useMutation(ADD_REVIEW);
   const { data } = useQuery(QUERY_SINGLE_PRODUCT, {
     variables: { id: id },
   });
 
   const product = data?.product || {};
   console.log(product);
+
+  const handleFormSubmit = async (e) => {
+    const data = rateSelect;
+
+    try {
+      const mutationResponse = await addReview({
+        variables: { commentText: data, productId: id },
+      });
+      console.log(mutationResponse);
+    } catch (err) {
+      alert("Failed to add review");
+    }
+  };
+
+  const handleRateSelectChange = (event) => {
+    setRateSelect(event.target.value);
+  };
 
   return (
     <Box>
@@ -52,14 +77,6 @@ const OneProductPage = () => {
               display="flex"
               justifyContent="center"
             >
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
-                  <Typography variant="h4" id="productInfo">
-                    Game Info
-                  </Typography>
-                </Grid>
-              </Grid>
-
               <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                   sx={{ height: 400 }}
@@ -75,44 +92,74 @@ const OneProductPage = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
+                  <Button size="small">Like</Button>
+                
                 </CardActions>
               </Card>
             </Box>
           </Container>
 
           <Container>
-            <Box
-              flex={4}
-              p={2}
-              className="main-display"
-              sx={{ backgroundColor: "skyblue" }}
-            >
+            <Box flex={4} p={2} className="main-display">
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  
+                  <Paper>
+                    <Typography variant="h4" align="center" id="productInfo">
+                      Rate this game
+                    </Typography>
+                  </Paper>
+                </Grid>
+                <Grid item xs={12}>
+                  <FormControl sx={{ m: 1, width: "100%" }}>
+                    <InputLabel id="demo-simple-select-helper-label">
+                      Age
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-helper-label"
+                      id="rateSelect"
+                      label="Rate"
+                      onChange={handleRateSelectChange} // Add onChange event handler
+                    >
+                      <MenuItem value="LOVE THIS GAME">LOVE THIS GAME</MenuItem>
+                      <MenuItem value="NOT GOOD ENOUGH">
+                        NOT GOOD ENOUGH
+                      </MenuItem>
+                      <MenuItem value="WAY TOO BAD">WAY TOO BAD</MenuItem>
+                    </Select>
+                    <FormHelperText>
+                      You will not be able to delete your review
+                    </FormHelperText>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12}>
+                  <Button
+                    variant="contained"
+                    color="success"
+                    onClick={() => handleFormSubmit()}
+                    sx={{ width: "100%" }}
+                  >
+                    Submit
+                  </Button>
                 </Grid>
               </Grid>
             </Box>
           </Container>
 
           <Container>
-            <Box
-              flex={4}
-              p={2}
-              className="main-display"
-              sx={{ backgroundColor: "yellow" }}
-            >
+            <Box flex={4} p={2} className="main-display">
               <Grid container spacing={2}>
-                <Grid item xs={12} >
-                  <Typography variant="h4" id="productInfo">
-                   
+                <Grid item xs={12}>
+                  <Typography variant="h4" align="center" id="productInfo">
                     Others Review
                   </Typography>
-
+                </Grid>
+                <Grid item xs={12}>
                   <TableContainer component={Paper}>
-                    <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 650 }} >
+                    <Table
+                      stickyHeader
+                      aria-label="sticky table"
+                      sx={{ minWidth: 650 }}
+                    >
                       <TableHead>
                         <TableRow>
                           <TableCell> User </TableCell>
@@ -120,16 +167,22 @@ const OneProductPage = () => {
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        <TableRow
-                          sx={{
-                            "&:last-child td, &:last-child th": { border: 0 },
-                          }}
-                        >
-                          <TableCell component="th" scope="row">
-                            JASON
-                          </TableCell>
-                          <TableCell align="right">LOVE THIS GAME</TableCell>
-                        </TableRow>
+                        {product.reviews &&
+                          product.reviews.map((review, index) => (
+                            <TableRow
+                              key={index}
+                              sx={{
+                                "&:last-child td, &:last-child th": {
+                                  border: 0,
+                                },
+                              }}
+                            >
+                              <TableCell component="th" scope="row">
+                                {review.user}
+                              </TableCell>
+                              <TableCell align="right">{review.rate}</TableCell>
+                            </TableRow>
+                          ))}
                       </TableBody>
                     </Table>
                   </TableContainer>
