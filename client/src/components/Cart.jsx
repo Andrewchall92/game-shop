@@ -6,9 +6,22 @@ import { idbPromise } from "../utils/helpers";
 import CartItem from "./CartItem";
 import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART, REMOVE_FROM_CART } from "../utils/actions";
+import {
+  TOGGLE_CART,
+  ADD_MULTIPLE_TO_CART,
+  REMOVE_FROM_CART,
+} from "../utils/actions";
 import "../styles/Cart/style.css";
-import { Button, Divider, Card, CardContent, CardMedia, IconButton, Typography, Stack } from "@mui/material";
+import {
+  Button,
+  Divider,
+  Card,
+  CardContent,
+  CardMedia,
+  IconButton,
+  Typography,
+  Stack,
+} from "@mui/material";
 import { Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
@@ -18,7 +31,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
-
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -86,28 +98,35 @@ const Cart = () => {
       <Divider />
       <List disablePadding>
         {state.cart.map((product) => (
-          <Card  sx={{ my: 4}}> {/* Add margin (my) to create spacing */}
-            <Stack direction='row' spacing={1} justifyContent="space-evenly">
+          <Card sx={{ my: 4 }}>
+            {" "}
+            {/* Add margin (my) to create spacing */}
+            <Stack direction="row" spacing={1} justifyContent="space-evenly">
               <CardMedia
                 component="img"
                 sx={{ width: 150 }}
                 image={product.image}
               />
-              <CardContent sx={{ width: '30%' }}>
-                <Typography component="primary"  variant="h5">
+              <CardContent sx={{ width: "30%" }}>
+                <Typography component="primary" variant="h5">
                   {product.name}
                 </Typography>
-                <Typography variant="secondary" color="text.secondary" fontSize='3%' component="div">
+                <Typography
+                  variant="secondary"
+                  color="text.secondary"
+                  fontSize="3%"
+                  component="div"
+                >
                   {product.description}
                 </Typography>
               </CardContent>
-              <CardContent sx={{ width: '30%' }}>
+              <CardContent sx={{ width: "30%" }}>
                 <Button onClick={() => removeFromCart(product)}>Remove</Button>
               </CardContent>
             </Stack>
           </Card>
         ))}
-      
+
         <ListItem sx={{ py: 1, px: 0 }}>
           <Typography variant="subtitle1" color="white">
             Total $ : {calculateTotal()}
@@ -130,15 +149,11 @@ const Cart = () => {
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
             Payment details
           </Typography>
-          <Button >Pay Now</Button>
+          <Button>Pay Now</Button>
         </Grid>
       </Grid>
-      </Box>
+    </Box>
   );
 };
 
 export default Cart;
-
-
-
-
