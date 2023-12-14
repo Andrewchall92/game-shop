@@ -6,18 +6,19 @@ import { idbPromise } from "../utils/helpers";
 import CartItem from "./CartItem";
 import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART, REMOVE_FROM_CART } from "../utils/actions";
 import "../styles/Cart/style.css";
-import { Button, Divider } from "@mui/material";
-
-import * as React from "react";
-import Typography from "@mui/material/Typography";
+import { Button, Divider, Card, CardContent, CardMedia, IconButton, Typography, Stack } from "@mui/material";
+import { Box } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import SkipNextIcon from "@mui/icons-material/SkipNext";
+import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
-import { Box } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -54,13 +55,13 @@ const Cart = () => {
     return sum.toFixed(2);
   }
 
-  function submitCheckout() {
-    getCheckout({
-      variables: {
-        products: [...state.cart],
-      },
+  const removeFromCart = (item) => {
+    dispatch({
+      type: REMOVE_FROM_CART,
+      _id: item._id,
     });
-  }
+    idbPromise("cart", "delete", { ...item });
+  };
 
   console.log(state.cart);
 
@@ -85,25 +86,31 @@ const Cart = () => {
       <Divider />
       <List disablePadding>
         {state.cart.map((product) => (
-          <ListItem
-            key={product.name}
-            className="singleCartProduct"
-            sx={{ py: 3, px: 1 }}
-          >
-            <div style={{ width: "50%" }}>
-              <Typography color="white" sx={{ fontSize: "120%" }}>
-                {product.name}
-              </Typography>
-              <Typography color="white">{product.description}</Typography>
-            </div>
-            <Typography sx={{ fontSize: "120%" }} color="white">
-              {product.price}
-            </Typography>
-          </ListItem>
+          <Card  sx={{ my: 4}}> {/* Add margin (my) to create spacing */}
+            <Stack direction='row' spacing={1} justifyContent="space-evenly">
+              <CardMedia
+                component="img"
+                sx={{ width: 150 }}
+                image={product.image}
+              />
+              <CardContent sx={{ width: '30%' }}>
+                <Typography component="div" variant="h5">
+                  {product.name}
+                </Typography>
+                <Typography variant="p" color="text.secondary" fontSize='3%' component="div">
+                  {product.description}
+                </Typography>
+              </CardContent>
+              <CardContent sx={{ width: '30%' }}>
+                <Button onClick={() => removeFromCart(product)}>Remove</Button>
+              </CardContent>
+            </Stack>
+          </Card>
         ))}
+      
         <ListItem sx={{ py: 1, px: 0 }}>
           <Typography variant="subtitle1" color="white">
-            {calculateTotal()}
+            Total $ : {calculateTotal()}
           </Typography>
         </ListItem>
       </List>
@@ -116,24 +123,22 @@ const Cart = () => {
             Name
           </Typography>
           <Typography gutterBottom color="white">
-            {" "}
-            Address{" "}
+            Address
           </Typography>
         </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
             Payment details
           </Typography>
-          <Button>
-            
-              Pay Now
-           
-          </Button>
+          <Button >Pay Now</Button>
         </Grid>
-        
       </Grid>
-    </Box>
+      </Box>
   );
 };
 
 export default Cart;
+
+
+
+
