@@ -94,10 +94,10 @@ const Cart = () => {
                 image={product.image}
               />
               <CardContent sx={{ width: '30%' }}>
-                <Typography component="div" variant="h5">
+                <Typography component="primary"  variant="h5">
                   {product.name}
                 </Typography>
-                <Typography variant="p" color="text.secondary" fontSize='3%' component="div">
+                <Typography variant="secondary" color="text.secondary" fontSize='3%' component="div">
                   {product.description}
                 </Typography>
               </CardContent>
