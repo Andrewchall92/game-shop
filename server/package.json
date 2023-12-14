@@ -24,7 +24,7 @@
     "install": "^0.13.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^6.3.0",
-    "mongoose": "^7.0.2",
+    "mongoose": "^8.0.3",
     "npm": "^10.2.5",
     "stripe": "^8.67.0"
   },
