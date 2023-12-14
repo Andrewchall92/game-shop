@@ -39,3 +39,14 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+#branding:hover {
+    transform: scale(1.2);
+    transition: all 0.6s ease-in-out;
+    color: #9ec3db;
+    cursor: pointer;
+    text-shadow: 0 0 10px #172d43;
+}
+
+#productInfo {
+    font-family: 'Josefin Sans', sans-serif;
+}

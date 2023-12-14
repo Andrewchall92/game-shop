@@ -81,6 +81,9 @@ export const Navbar = ({ toggleCart, cart }) => {
       <StyledToolbar>
         <Typography
           variant="h5"
+          component="a"
+          href="/"
+
           style={{
             fontFamily: "Staatliches",
             fontWeight: "bold",
@@ -102,7 +105,7 @@ export const Navbar = ({ toggleCart, cart }) => {
             color="action"
           />
 
-          <ShoppingCartIcon color="action" onClick={toggleCart} />
+         
 
           {/* Profile Menu on click */}
           <ShoppingCartIcon onClick={handleOpen} Open modal />

@@ -16,6 +16,28 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
+export const QUERY_SINGLE_PRODUCT = gql`
+query Query($id: ID!) {
+  product(_id: $id) {
+    _id
+    description
+    category {
+      name
+    }
+    image
+    likes
+    name
+    price
+    reviews {
+      commentText
+      createdAt
+      user
+    }
+  }
+}
+`;
+
+
 export const QUERY_CHECKOUT = gql`
   query getCheckout($products: [ProductInput]) {
     checkout(products: $products) {
