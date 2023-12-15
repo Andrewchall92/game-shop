@@ -1,50 +1,9 @@
 ![GitHub License Badge](https://img.shields.io/badge/License-MIT-yellow)
 # Boring-Game-Shop
 
-#### Resources
+#### Deployed Application
 
 [Link to deployed site](https://boring-game-shop-9e632aaf5137.herokuapp.com/)
-
-
-
-## Technology Used
-
-- [npm](https://www.npmjs.com/)
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-**BackEnd:**
-
-- [@apollo/server](https://www.apollographql.com/docs/apollo-server/)
-- [bcrypt](https://www.npmjs.com/package/bcrypt)
-- [express](https://expressjs.com/)
-- [graphql](https://graphql.org/)
-- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-- [mongoose](https://www.npmjs.com/package/mongoose)
-- [Stripe API](https://stripe.com/docs)
-
-**FrontEnd:**
-
-- [@apollo/client](https://www.apollographql.com/docs/react/)
-- [graphql](https://graphql.org/)
-- [jwt-decode](https://www.npmjs.com/package/jwt-decode)
-- [react](https://react.dev/)
-- [react-dom](https://www.npmjs.com/package/react-dom)
-- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
-- [vitest](https://vitest.dev/)
-- [happy-dom](https://www.npmjs.com/package/happy-dom)
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [BootStrap](https://getbootstrap.com)
-- [MUI](https://mui.com/)
-- [TailWind](https://tailwindcss.com/)
-- [Unsplash API](https://unsplash.com/developers)
-
-### Description
-
-Welcome to Boring Game Shop, where even the most mundane games get exciting! In an era where online businesses are flourishing. Boring Game Shop aims to bring a touch of excitement to the world of eCommerce by presenting a real-life application developed using the MERN Stack. The application is styled with Materialize UI, adding flair with emojis and ensuring a delightful user experience. For secure and seamless transactions, we've integrated Stripe for the checkout process.
-
-![Screenshot of ](./client/public/homepage.gif)
-
 
 #### Table of Contents
 
@@ -58,6 +17,14 @@ Welcome to Boring Game Shop, where even the most mundane games get exciting! In 
 - [Authors](#authors)
 
 ---
+
+### Description
+
+Welcome to Boring Game Shop, where even the most mundane games get exciting! In an era where online businesses are flourishing. Boring Game Shop aims to bring a touch of excitement to the world of eCommerce by presenting a real-life application developed using the MERN Stack. The application is styled with Materialize UI, adding flair with emojis and ensuring a delightful user experience. For secure and seamless transactions, we've integrated Stripe for the checkout process.
+
+
+---
+
 
 
 
@@ -82,6 +49,7 @@ The homepage provides users with a streamlined experience to enter the API index
 
 ---
 
+
 **Login/Sign Up**
 
 Existing users have the ability to log in and new users have the ability to sign up.
@@ -91,8 +59,9 @@ Existing users have the ability to log in and new users have the ability to sign
 ---
 
 
-### Highlighted Features
 
+### Highlighted Features
+---
 
 **Secure User Password**
 
@@ -241,24 +210,40 @@ Link to License - [Website to MIT License](<(https://opensource.org/license/mit)
 ---
 
 
-### Badges
+### Technologies Used
 
-![GitHub License Badge](https://img.shields.io/badge/License-MIT-yellow)
+![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+
+![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
+
+![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
+---
 
-## Authors:
+### Authors:
 
 Andrew Hall
 
@@ -284,3 +269,32 @@ Andy Zurek
 - [Portfolio](https://clinquant-sundae-c9bd6e.netlify.app/)
 - [LinkedIn](https://www.linkedin.com/in/andy-zurek-374bb9291/)
 - [GitHub](https://github.com/AZurek17)
+
+
+---
+
+#### Resources
+
+- [npm](https://www.npmjs.com/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [@apollo/server](https://www.apollographql.com/docs/apollo-server/)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [express](https://expressjs.com/)
+- [graphql](https://graphql.org/)
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- [mongoose](https://www.npmjs.com/package/mongoose)
+- [Stripe API](https://stripe.com/docs)
+- [@apollo/client](https://www.apollographql.com/docs/react/)
+- [graphql](https://graphql.org/)
+- [jwt-decode](https://www.npmjs.com/package/jwt-decode)
+- [react](https://react.dev/)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [vitest](https://vitest.dev/)
+- [happy-dom](https://www.npmjs.com/package/happy-dom)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [BootStrap](https://getbootstrap.com)
+- [MUI](https://mui.com/)
+- [TailWind](https://tailwindcss.com/)
+- [Unsplash API](https://unsplash.com/developers)
