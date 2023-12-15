@@ -1,9 +1,9 @@
 ![GitHub License Badge](https://img.shields.io/badge/License-MIT-yellow)
 # Boring-Game-Shop
 
-#### Deployed Application
 
-[Link to deployed site](https://boring-game-shop-9e632aaf5137.herokuapp.com/)
+
+**[Link to deployed Application](https://boring-game-shop-9e632aaf5137.herokuapp.com/)**
 
 #### Table of Contents
 
@@ -28,7 +28,7 @@ Welcome to Boring Game Shop, where even the most mundane games get exciting! In 
 
 
 
-#### Installation
+### Installation
 
 - To install all dependencies, run: npm install
 - To load the seeds into the database, run: npm run seed
