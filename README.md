@@ -131,9 +131,9 @@ x
 
  Anthony Nguyen
 
- - [Portfolio](#)
- - [LinkedIn](#)
- - [GitHub](#)
+ - [Portfolio](https://main--kaleidoscopic-custard-680b35.netlify.app/)
+ - [LinkedIn](https://www.linkedin.com/in/anthony-nguyen-32261526a/)
+ - [GitHub](https://github.com/Blackswan1010)
 
  Thai Nghiem
 
