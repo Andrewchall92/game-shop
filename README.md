@@ -245,26 +245,26 @@ Link to License - [Website to MIT License](<(https://opensource.org/license/mit)
 
 ### Authors:
 
-Andrew Hall
+**Andrew Hall**
 
 - [Portfolio](#)
 - [LinkedIn](#)
 - [GitHub](#)
 
-Anthony Nguyen
+**Anthony Nguyen**
 
  - [Portfolio](https://main--kaleidoscopic-custard-680b35.netlify.app/)
  - [LinkedIn](https://www.linkedin.com/in/anthony-nguyen-32261526a/)
  - [GitHub](https://github.com/Blackswan1010)
 
 
-Thai Nghiem
+**Thai Nghiem**
 
 - [Portfolio](https://main--j-studio-rjs.netlify.app/)
 - [LinkedIn](https://www.linkedin.com/in/thai-nghiem-319292267/)
 - [GitHub](https://github.com/Truecoding4life)
 
-Andy Zurek
+**Andy Zurek**
 
 - [Portfolio](https://clinquant-sundae-c9bd6e.netlify.app/)
 - [LinkedIn](https://www.linkedin.com/in/andy-zurek-374bb9291/)
@@ -273,7 +273,7 @@ Andy Zurek
 
 ---
 
-#### Resources
+### Resources
 
 - [npm](https://www.npmjs.com/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
