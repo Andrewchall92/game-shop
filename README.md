@@ -14,7 +14,7 @@
 - [License](#license)
 - [Badges](#badges)
 - [Contributing](#contributing)
-- [Authors](#authors)
+- [Authors](#creator)
 
 ---
 
@@ -243,7 +243,7 @@ Link to License - [Website to MIT License](<(https://opensource.org/license/mit)
 
 ---
 
-### Authors:
+### Contributors
 
 **Andrew Hall**
 
