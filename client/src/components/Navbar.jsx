@@ -67,9 +67,6 @@ function showLogin() {
   }
 }
 
-
-
-
 export const Navbar = ({ toggleCart, cart }) => {
   const [open, setOpenAccount] = useState(false);
   const [openModal, setOpen] = React.useState(false);
@@ -83,7 +80,6 @@ export const Navbar = ({ toggleCart, cart }) => {
           variant="h5"
           component="a"
           href="/"
-
           style={{
             fontFamily: "Staatliches",
             fontWeight: "bold",
@@ -105,20 +101,19 @@ export const Navbar = ({ toggleCart, cart }) => {
             color="action"
           />
 
-         
-
-          {/* Profile Menu on click */}
           <ShoppingCartIcon onClick={handleOpen} Open modal />
           <Modal
             open={openModal}
             onClose={handleClose}
-            sx={{display: "flex",
+            sx={{
+              display: "flex",
               justifyContent: "center",
-              alignItems: "center",}}
-            
+              alignItems: "center",
+            }}
           >
-           <Cart />
+            <Cart />
           </Modal>
+
 
           <Menu
             id="profile-menu"
@@ -134,6 +129,7 @@ export const Navbar = ({ toggleCart, cart }) => {
               horizontal: "right",
             }}
           >
+            
             <MenuItem>
               <Link to="./profile">My account</Link>
             </MenuItem>
