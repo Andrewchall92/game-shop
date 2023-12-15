@@ -58,6 +58,19 @@ Existing users have the ability to log in and new users have the ability to sign
 
 ---
 
+**Product's Description Toggle**
+
+User could view product description by clicking on the arrow icon
+
+![Game Detail](./client/public/card.gif)
+
+---
+
+**Side Bar**
+
+User could seamlessly moving of different sections of the sidebar instead of scrolling
+
+![Side Bar](./client/public/coditional%20rendering.gif)
 
 
 ### Highlighted Features
