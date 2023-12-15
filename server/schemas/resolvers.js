@@ -1,6 +1,6 @@
 const { User, Product, Category, Order, Review } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require('stripe')('sk_test_51ONTIVHTFh8Wci3cJtLIlL13zdb1MbBsYiou3PBy4aYQmMxXGENNkOIv2fB1PCaxuAbvLYLzHmD30swJXni08xQ800uWiYh07D');
 
 const resolvers = {
   Query: {
@@ -83,7 +83,7 @@ const resolvers = {
             },
             unit_amount: product.price * 100,
           },
-          quantity: product.purchaseQuantity,
+          quantity: product.purchaseQuantity ,
         });
       }
 
@@ -94,7 +94,6 @@ const resolvers = {
         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${url}/`,
       });
-
       return { session: session.id };
     },
   },
