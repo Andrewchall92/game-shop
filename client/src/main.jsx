@@ -11,7 +11,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
-import Review from "./pages/Review";
+
 import Profile from './pages/Profile.jsx';
 import SingleProductPage from './pages/SingleProduct.jsx';
 
@@ -33,10 +33,6 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Signup />
-      },
-      {
-        path: '/reviews',
-        element: <Review />
       },
       {
         path: '/success',
