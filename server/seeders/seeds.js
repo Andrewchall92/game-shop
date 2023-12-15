@@ -2,9 +2,10 @@ const db = require('../config/connection');
 const { Category, Product, User } = require('../models');
 
 const cleanDB = require('./cleanDB');
-
+db.once('error', error => console.error(error));
 db.once('open', async () => {
   try {
+    console.log('database connected');
     await cleanDB('Category', 'categories');
     await cleanDB('Product', 'products');
     await cleanDB('User', 'users');
