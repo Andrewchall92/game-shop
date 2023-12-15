@@ -65,6 +65,7 @@ const typeDefs = `
     image: String
     price: Float
     quantity: Int
+    description: String
   }
 
   type Query {

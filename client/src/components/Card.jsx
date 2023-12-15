@@ -44,12 +44,12 @@ export function ProductCard({
         />
         <Grid container alignItems="center">
           <Grid item xs={12}>
-            <CardHeader gutterBottom variant="h5" component="div">
+            <CardHeader Bottom variant="h5" component="div">
               {name}
             </CardHeader>
           </Grid>
           <Grid item xs={12}>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography Bottom variant="h5" component="div">
               {price}
             </Typography>
           </Grid>

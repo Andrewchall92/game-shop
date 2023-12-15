@@ -4,10 +4,8 @@ import { useLazyQuery } from "@apollo/client";
 import { QUERY_CHECKOUT } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import CartItem from "./CartItem";
-import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
 import {
-  TOGGLE_CART,
   ADD_MULTIPLE_TO_CART,
   REMOVE_FROM_CART,
 } from "../utils/actions";
@@ -18,30 +16,23 @@ import {
   Card,
   CardContent,
   CardMedia,
-  IconButton,
   Typography,
   Stack,
 } from "@mui/material";
 import { Box } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
 
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe("pk_test_51ONTIVHTFh8Wci3c6KmX3ltxyZAHhSTHFY12NMZwUeg6eHfDykwMEYyJvzIr979461JfVxXjBN0Ogl9dcSzcRjaa00X89U6v2w");
 
 const Cart = () => {
-  const theme = useTheme();
-
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   useEffect(() => {
     if (data) {
+      console.log("This is data to Stripe :     "+data)
       stripePromise.then((res) => {
         res.redirectToCheckout({ sessionId: data.checkout.session });
       });
@@ -75,6 +66,15 @@ const Cart = () => {
     idbPromise("cart", "delete", { ...item });
   };
 
+  function handleCheckout() {
+    
+    console.log(getCheckout({
+      variables:{
+        products: [...state.cart],
+      }
+    },))
+   
+  }
   console.log(state.cart);
 
   return (
@@ -91,16 +91,14 @@ const Cart = () => {
         variant="h6"
         color="white"
         sx={{ fontWeight: "bold" }}
-        gutterBottom
+        Bottom
       >
         Order summary
       </Typography>
       <Divider />
       <List disablePadding>
         {state.cart.map((product) => (
-          <Card sx={{ my: 4 }}>
-            {" "}
-            {/* Add margin (my) to create spacing */}
+          <Card key={product._id} sx={{ my: 4 }}>
             <Stack direction="row" spacing={1} justifyContent="space-evenly">
               <CardMedia
                 component="img"
@@ -108,13 +106,13 @@ const Cart = () => {
                 image={product.image}
               />
               <CardContent sx={{ width: "30%" }}>
-                <Typography component="primary" variant="h5">
+                <Typography component="div" variant="h5">
                   {product.name}
                 </Typography>
                 <Typography
-                  variant="secondary"
+                  variant="body2"
                   color="text.secondary"
-                  fontSize="3%"
+                  fontSize="12px"
                   component="div"
                 >
                   {product.description}
@@ -135,21 +133,23 @@ const Cart = () => {
       </List>
       <Grid container spacing={2} style={{ width: "30%" }}>
         <Grid item xs={12} sm={6}>
-          <Typography variant="h6" color="white" gutterBottom sx={{ mt: 2 }}>
+          <Typography variant="h6" color="white" Bottom sx={{ mt: 2 }}>
             Shipping
           </Typography>
-          <Typography gutterBottom color="white">
+          <Typography Bottom color="white">
             Name
           </Typography>
-          <Typography gutterBottom color="white">
+          <Typography Bottom color="white">
             Address
           </Typography>
         </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
+          <Typography variant="h6" Bottom sx={{ mt: 2 }}>
             Payment details
           </Typography>
-          <Button>Pay Now</Button>
+          <Button onClick={handleCheckout} variant="contained" color="primary">
+            Pay Now
+          </Button>
         </Grid>
       </Grid>
     </Box>

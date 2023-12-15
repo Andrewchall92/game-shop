@@ -84,7 +84,7 @@ const OneProductPage = () => {
                   title="green iguana"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography Bottom variant="h5" component="div">
                     {product.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">

@@ -52,15 +52,7 @@ const userSchema = new Schema({
   orders: [Order.schema]
 });
 
-// set up pre-save middleware to create password
-userSchema.pre('save', async function(next) {
-  if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
 
-  next();
-});
 //bcrypt seed passwords
 
 userSchema.pre('insertMany', async function(next, docs, err) {
@@ -71,6 +63,16 @@ userSchema.pre('insertMany', async function(next, docs, err) {
     
   })
   
+
+  next();
+});
+
+// set up pre-save middleware to create password
+userSchema.pre('save', async function(next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
 
   next();
 });
