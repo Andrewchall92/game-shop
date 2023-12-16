@@ -9,6 +9,7 @@ import {
   Toolbar,
   Typography,
   Modal,
+  Badge,
 } from "@mui/material";
 import React, { useState } from "react";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
@@ -17,6 +18,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import Cart from "./Cart";
+import { useStoreContext } from "../utils/GlobalState";
+
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -59,12 +62,14 @@ function showLogin() {
   }
 }
 
+
 export const Navbar = ({ toggleCart, cart }) => {
   const [open, setOpenAccount] = useState(false);
   const [openModal, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  const [state, dispatch] = useStoreContext();
+  
   return (
     <AppBar position="sticky" color="primary">
       <StyledToolbar>
@@ -92,8 +97,9 @@ export const Navbar = ({ toggleCart, cart }) => {
             }}
             color="action"
           />
-
-          <ShoppingCartIcon  onClick={handleOpen} />
+          <Badge badgeContent={parseInt(state.cart.length)} color="error">
+            <ShoppingCartIcon onClick={handleOpen} />
+          </Badge>
           <Modal
             open={openModal}
             onClose={handleClose}
@@ -105,7 +111,6 @@ export const Navbar = ({ toggleCart, cart }) => {
           >
             <Cart />
           </Modal>
-
 
           <Menu
             id="profile-menu"
@@ -121,7 +126,6 @@ export const Navbar = ({ toggleCart, cart }) => {
               horizontal: "right",
             }}
           >
-            
             <MenuItem>
               <Link to="./profile">My account</Link>
             </MenuItem>

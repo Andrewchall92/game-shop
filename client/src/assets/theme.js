@@ -8,11 +8,7 @@ export const theme = createTheme({
             dark: "skyblue"
         },
 
-        // Main
-        error:{
-            main: "#1565c0"
-        }
-        ,
+    
         // Use for Icon
         code: {
             main: "#1565c0"
