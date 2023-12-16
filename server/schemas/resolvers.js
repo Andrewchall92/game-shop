@@ -82,7 +82,7 @@ const resolvers = {
               product_data: {
                 name: product.name,
                 description: product.description,
-                images: [`${url}/images/${product.image}`],
+                images: [`${product.image}`],
               },
               unit_amount: parseInt(product.price) * 100,
             },
