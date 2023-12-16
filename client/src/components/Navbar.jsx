@@ -38,6 +38,8 @@ const Icons = styled(Box)(({ theme }) => ({
   gap: "20px",
 }));
 
+
+
 function showLogin() {
   if (Auth.loggedIn()) {
     return (
@@ -71,6 +73,7 @@ export const Navbar = ({ toggleCart, cart }) => {
   const [state, dispatch] = useStoreContext();
   
   return (
+    
     <AppBar position="sticky" color="primary">
       <StyledToolbar>
         <Typography
@@ -105,6 +108,7 @@ export const Navbar = ({ toggleCart, cart }) => {
           <AccountBoxIcon
             onClick={() => {
               setOpenAccount(true);
+              
             }}
             color="action"
           />

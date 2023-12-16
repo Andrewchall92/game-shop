@@ -79,32 +79,18 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 export const QUERY_USER = gql`
-  {
-    user {
-      firstName
-      lastName
-      email
-      address
-      city
-      state
-      zip
-      orders {
-        _id
-        purchaseDate
-        products {
-          _id
-          name
-          description
-          price
-          quantity
-          image
-          category {
-            name
-          }
-        }
-      }
-    }
+query User($email: String!) {
+  user(email: $email) {
+    _id
+    address
+    city
+    email
+    firstName
+    isAdmin
+    lastName
+    zip
   }
+}
 `;
 
 export const QUERY_ALL_REVIEWS = gql`

@@ -29,21 +29,13 @@ const resolvers = {
       return await Product.findById(_id).populate("category");
     },
 
-    user: async (parent, args, context) => {
+    user: async (_, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: "orders.products",
-          populate: "category",
-        });
-
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
-
+        const user = await User.findOne({ email: args.email });
         return user;
       }
 
-      throw AuthenticationError;
-    },
-
+      throw new AuthenticationError("User not authenticated");},
     allUsers: async () => {
       return await User.find({});
     },
@@ -97,7 +89,6 @@ const resolvers = {
           success_url: `${url}/success`,
           cancel_url: `${url}/`,
         });
-        console.log(session)
         return { session: session.id };
       } catch (err) {
         console.log(err);

@@ -73,7 +73,7 @@ const typeDefs = `
     productsByCategory(category: ID!, name: String): [Product]
     products: [Product]!
     product(_id: ID!): Product
-    user: User
+    user(email: String!): User
     order(_id: ID!): Order
     checkout(products: [ProductInput]): Checkout
     getAllLikes: [Product]
