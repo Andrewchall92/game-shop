@@ -39,11 +39,11 @@ query Query($id: ID!) {
 
 
 export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ProductInput]) {
-    checkout(products: [ProductInput]) {
-      session
-    }
+query Checkout($products: [ProductInput]) {
+  checkout(products: $products) {
+    session
   }
+}
 `;
 
 export const QUERY_ALL_PRODUCTS = gql`

@@ -68,11 +68,12 @@ const Cart = () => {
 
   function handleCheckout() {
     
-    console.log(getCheckout({
+    getCheckout({
       variables:{
         products: [...state.cart],
       }
-    },))
+    })
+    console.log("This is handleCheckout"+[...state.cart])
    
   }
   console.log(state.cart);
@@ -91,7 +92,7 @@ const Cart = () => {
         variant="h6"
         color="white"
         sx={{ fontWeight: "bold" }}
-        Bottom
+        bottom
       >
         Order summary
       </Typography>
@@ -133,18 +134,18 @@ const Cart = () => {
       </List>
       <Grid container spacing={2} style={{ width: "30%" }}>
         <Grid item xs={12} sm={6}>
-          <Typography variant="h6" color="white" Bottom sx={{ mt: 2 }}>
+          <Typography variant="h6" color="white" bottom sx={{ mt: 2 }}>
             Shipping
           </Typography>
-          <Typography Bottom color="white">
+          <Typography bottom color="white">
             Name
           </Typography>
-          <Typography Bottom color="white">
+          <Typography bottom color="white">
             Address
           </Typography>
         </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" Bottom sx={{ mt: 2 }}>
+          <Typography variant="h6" bottom sx={{ mt: 2 }}>
             Payment details
           </Typography>
           <Button onClick={handleCheckout} variant="contained" color="primary">

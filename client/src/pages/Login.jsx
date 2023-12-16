@@ -50,11 +50,15 @@ function Login () {
         variables: { email: data.get('email'), password: data.get('password') },
       });
       const token = mutationResponse.data.login.token;
-      const success = Auth.login(token);
-      if(success){
+      try {
+        Auth.login(token);
         window.location('/');
       }
-      else {alert('Incorrect email or password')}
+      catch(err){
+        console.log(err)
+        alert('System error, fail to create account')
+      }
+      
     
   };
 

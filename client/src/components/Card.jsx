@@ -44,12 +44,12 @@ export function ProductCard({
         />
         <Grid container alignItems="center">
           <Grid item xs={12}>
-            <CardHeader Bottom variant="h5" component="div">
+            <CardHeader bottom variant="h5" component="div">
               {name}
             </CardHeader>
           </Grid>
           <Grid item xs={12}>
-            <Typography Bottom variant="h5" component="div">
+            <Typography bottom variant="h5" component="div">
               {price}
             </Typography>
           </Grid>
@@ -66,9 +66,9 @@ export function ProductCard({
         </Collapse>
       </Box>
       <ExpandMore
-        expand={expanded}
+        expand={`${expanded}`}
         onClick={handleExpandClick}
-        aria-expanded={expanded}
+        
         aria-label="show more"
       ></ExpandMore>
       <Divider variant="middle" />
