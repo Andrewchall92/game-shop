@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useLazyQuery } from "@apollo/client";
 import { QUERY_CHECKOUT } from "../utils/queries";
@@ -18,17 +18,41 @@ import {
   CardMedia,
   Typography,
   Stack,
+  Alert,
+  Box,
+  Grid
 } from "@mui/material";
-import { Box } from "@mui/material";
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Grid from "@mui/material/Grid";
+
+
+import Modal from '@mui/material/Modal';
+
+
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: "maroon",
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+  borderRadius: "10px"
+};
+
 
 const stripePromise = loadStripe("pk_test_51ONTIVHTFh8Wci3c6KmX3ltxyZAHhSTHFY12NMZwUeg6eHfDykwMEYyJvzIr979461JfVxXjBN0Ogl9dcSzcRjaa00X89U6v2w");
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     if (data) {
@@ -67,7 +91,9 @@ const Cart = () => {
   };
 
   function handleCheckout() {
-    
+    if(!state.cart.length){
+      return handleOpen()
+    }
     getCheckout({
       variables:{
         products: [...state.cart],
@@ -153,6 +179,25 @@ const Cart = () => {
           </Button>
         </Grid>
       </Grid>
+      <div>
+     
+      <Modal
+        keepMounted
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="keep-mounted-modal-title"
+        aria-describedby="keep-mounted-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
+            No Item Has Been Selected
+          </Typography>
+          <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
+            There is no item in your cart
+          </Typography>
+        </Box>
+      </Modal>
+    </div>
     </Box>
   );
 };
