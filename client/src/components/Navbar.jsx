@@ -91,14 +91,29 @@ export const Navbar = ({ toggleCart, cart }) => {
           <InputBase placeholder="search..." />
         </Search>
         <Icons>
+
+        {Auth.loggedIn() ? (
+          <Badge color="success" badgeContent=" " variant="dot">
           <AccountBoxIcon
             onClick={() => {
               setOpenAccount(true);
             }}
             color="action"
           />
+        </Badge>
+        ) :(
+          <AccountBoxIcon
+            onClick={() => {
+              setOpenAccount(true);
+            }}
+            color="action"
+          />
+        )}
+        
+
+          
           <Badge badgeContent={parseInt(state.cart.length)} color="error">
-            <ShoppingCartIcon onClick={handleOpen} />
+            <ShoppingCartIcon color='action' onClick={handleOpen} />
           </Badge>
           <Modal
             open={openModal}
