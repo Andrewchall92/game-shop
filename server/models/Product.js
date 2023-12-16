@@ -32,16 +32,12 @@ const productSchema = new Schema({
     required: true
   }
   ,
-  likes: {
-    type: Number,
-    default: 0,
-    userId: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-      }
-    ]
-  },
+  likes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  ],
   reviews: [
     {
       type: Schema.Types.ObjectId,

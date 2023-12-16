@@ -90,7 +90,7 @@ const typeDefs = `
     removeReview(productId: ID!, reviewId: ID!): Product
     login(email: String!, password: String!): Auth
     createCoupon(name: String!, discount: Float!, expiration: String!): Coupon
-    addLike(_id: ID!): Product
+    addLike(productId: ID!, userId: ID!): Product
     removeLike(_id: ID!): Product
   }
 `;
