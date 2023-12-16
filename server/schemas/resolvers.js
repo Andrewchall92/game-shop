@@ -95,7 +95,7 @@ const resolvers = {
           line_items,
           mode: "payment",
           success_url: `${url}/success`,
-          cancel_url: `http://localhost:3000/`,
+          cancel_url: `${url}/`,
         });
         console.log(session)
         return { session: session.id };
