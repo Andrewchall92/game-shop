@@ -50,7 +50,7 @@ export function ProductCard({
           </Grid>
           <Grid item xs={12}>
             <Typography bottom variant="h5" component="div">
-              {price}
+              $ {price}
             </Typography>
           </Grid>
         </Grid>
