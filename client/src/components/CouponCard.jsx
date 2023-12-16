@@ -9,7 +9,7 @@ const CouponCard = ({discount,description})=>{
         <Card sx={{ maxWidth: 200, minHeight:300 }} variant='outlined'>
               <CardActionArea>
                 <CardContent>
-                  <Typography Bottom variant="h5" component="div">
+                  <Typography bottom variant="h5" component="div">
                    {discount}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">

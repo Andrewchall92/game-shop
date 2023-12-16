@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import {
   AppBar,
-  Badge,
   Box,
   Divider,
   InputBase,
@@ -10,21 +9,14 @@ import {
   Toolbar,
   Typography,
   Modal,
-  Button,
-  List,
 } from "@mui/material";
 import React, { useState } from "react";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import Cart from "./Cart";
-
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import Grid from "@mui/material/Grid";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -95,13 +87,13 @@ export const Navbar = ({ toggleCart, cart }) => {
         </Search>
         <Icons>
           <AccountBoxIcon
-            onClick={(e) => {
+            onClick={() => {
               setOpenAccount(true);
             }}
             color="action"
           />
 
-          <ShoppingCartIcon onClick={handleOpen} Open modal />
+          <ShoppingCartIcon  onClick={handleOpen} />
           <Modal
             open={openModal}
             onClose={handleClose}
@@ -119,7 +111,7 @@ export const Navbar = ({ toggleCart, cart }) => {
             id="profile-menu"
             aria-labelledby="demo-positioned-button"
             open={open}
-            onClose={(e) => setOpenAccount(false)}
+            onClose={() => setOpenAccount(false)}
             anchorOrigin={{
               vertical: "top",
               horizontal: "right",
